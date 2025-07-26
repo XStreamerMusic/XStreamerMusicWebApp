@@ -1,3 +1,3 @@
-![XStreamer Music Banner.](/staticfiles/images/github.png)
+![XStreamer Music Banner.](/staticfiles/images/brand/github.png)
 <h1>XStreamer Music<h1>
 
