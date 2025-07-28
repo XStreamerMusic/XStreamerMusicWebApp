@@ -10,3 +10,61 @@
         /* width: 75%; */
     }
 }
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+    
+    header, main {
+        width: 60%;
+    }
+
+    header {
+        flex: .2;
+    }
+
+    main {
+        flex: .7;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    main p {
+        width: 80%;
+    }
+
+    #waitlist {
+        width: 60%;
+    }
+
+    #page-logo {
+        top: 50%;
+        right: -30%;
+        height: 100vh;
+        position: absolute;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(-50%);
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    #waitlist {
+        width: 60%;
+    }
+
+    #responsive-logo {
+        right: -10%;
+    }
+}
