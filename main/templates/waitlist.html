@@ -98,14 +98,14 @@
             <ul class="messages">
                 <ion-icon class="main-icon" name="notifications"></ion-icon>
                 {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    <li>
                         {{ message }}
                     </li>
                 {% endfor %}
             </ul>
         {% endif %}
     </main>
-    <img src="{% static 'images/noise_9x16.png' %}" alt="noise background" class="noise-background">
+    <img src="{% static 'images/noise_16x9.png' %}" alt="noise background" class="noise-background">
     <div class="lower-section">
         <svg id="page-logo" width="567" height="572" viewBox="0 0 567 572" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M282.435 285.706L110.726 398.359V502.763" stroke="white" stroke-width="100" stroke-linejoin="round"/>
