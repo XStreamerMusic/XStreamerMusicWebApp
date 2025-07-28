@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Kanit';
+}
+
+html {
+    height: 100vh;
+    overflow: hidden;
+    max-height: 100dvh;
+    background: #8C52FF;
+    background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background-attachment: fixed;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.noise-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+header {
+    flex: .15;
+    display: grid;
+}
+
+header svg {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    max-width: 160px;
+    max-height: 200px;
+}
+
+main {
+    flex: .5;
+    color: #fff;
+    display: grid;
+    padding: 2rem 1rem;
+    text-align: center;
+    place-content: center;
+}
+
+main h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: 'Special Gothic Expanded One', 'Kanit';
+}
+
+main p {
+    font-weight: 500;
+}
+
+#waitlist {
+    padding: 4px;
+    display: flex;
+    margin: 2rem 1rem;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#waitlist input {
+    flex: .7;
+    font-size: .8rem;
+    border: none;
+    color: #fff;
+    outline: none;
+    padding: .75rem;
+    background: none;
+}
+
+#waitlist input::placeholder {
+    color: #ffffff90;
+}
+
+#waitlist-submit {
+    flex: .3;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#waitlist-submit ion-icon {
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.lower-section {
+    flex: .4;
+    overflow: hidden;
+    position: relative;
+}
+
+#page-logo {
+    left: 50%;
+    z-index: -1;
+    width: 90vw;
+    bottom: -40vh;
+    position: absolute;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.messages {
+    left: 50%;
+    width: 90%;
+    z-index: 99;
+    bottom: 1rem;
+    padding: 1rem;
+    list-style: none;
+    color: #3a3a3a;
+    position: absolute;
+    transform: translateX(-50%);
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.messages li {
+    display: flex;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages .main-icon {
+    margin: .5rem 0;
+    font-size: 1.2rem;
+}
+
+.messages .inner-icon {
+    font-size: 1rem;
+    margin-inline-end: .5rem;
+}
