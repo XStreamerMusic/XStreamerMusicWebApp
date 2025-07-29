@@ -3,7 +3,7 @@ from django.urls import path
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.waitlist, name="index"),
+    path('', views.index, name="index"),
     path('waitlist', views.waitlist, name="waitlist"),
     path('join_waitlist', views.join_waitlist, name="join_waitlist"),
 ]
