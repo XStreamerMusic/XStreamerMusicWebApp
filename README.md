@@ -1,4 +1,4 @@
-![XStreamer Music Banner.](/staticfiles/images/brand/github.png)
+![XStreamer Music Banner.](/main/static/images/brand/github.png)
 # XStreamer Music
 
 ### The official public-facing Web App for XStreamer Music
