@@ -13,16 +13,25 @@
 
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
     
-    header, main {
-        width: 60%;
-    }
-
-    header {
-        flex: .2;
-    }
-
     main {
-        flex: .7;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #content {
+        width: 60%;
+        height: 90%;
+
+        align-items: flex-start;
+    }
+
+    .logo {
+        max-width: 160px;
+        margin-inline-start: 1rem;
+    }
+
+    .main-content {
+        width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -35,22 +44,27 @@
 
     main p {
         width: 80%;
+        margin-bottom: 3rem;
     }
 
     #waitlist {
         width: 60%;
     }
 
-    #page-logo {
+    .page-logo {
+        width: 30%;
+        height: 100%;
+        max-height: none;
+    }
+    
+    .page-logo svg {
         top: 50%;
         right: -30%;
-        height: 100vh;
-        position: absolute;
-
-        opacity: 1;
-        visibility: visible;
-
-        transform: translateY(-50%);
+        width: auto;
+        height: 100%;
+        left: auto;
+        pointer-events:all;
+        transform: translateY(-55%);
     }
 }
 

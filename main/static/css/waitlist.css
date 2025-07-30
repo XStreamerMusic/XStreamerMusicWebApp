@@ -6,19 +6,19 @@
 }
 
 html {
-    height: 100dvh;
-    max-height: 100dvh;
+    height: 100%;
+    max-height: 200vh;
+    overflow-x: hidden;
     background: #8C52FF;
     background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
 }
 
 body {
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
 }
 
 .noise-background {
@@ -27,48 +27,55 @@ body {
     width: 100%;
     z-index: -1;
     height: 100%;
+    position: fixed;
     object-fit: cover;
-    position: absolute;
-}
-
-header {
-    flex: .15;
-    display: grid;
-}
-
-header svg {
-    width: 100%;
-    margin: 1rem auto;
-    height: 100%;
-    max-width: 160px;
-    max-height: 200px;
 }
 
 main {
-    flex: .6;
     color: #fff;
-    display: grid;
-    overflow: hidden;
+    display: flex;
+    height: 100dvh;
     padding: 2rem 1rem;
+    flex-direction: column;
+}
+
+#content {
+    height: 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 2rem;
+}
+
+.main-content {
+    margin: auto 1rem;
     text-align: center;
-    place-content: center;
 }
 
 main h1 {
-    font-size: 1.6rem;
+    font-size: 6vw;
     font-weight: 500;
-    margin-bottom: 1rem;
+    white-space: nowrap;
+    margin-bottom: 2rem;
     font-family: 'Special Gothic Expanded One', 'Kanit';
 }
 
 main p {
     font-weight: 500;
+    margin-bottom: 2rem;
 }
 
 #waitlist {
+    width: 100%;
     padding: 4px;
     display: flex;
-    margin: 2rem 1rem;
+
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
@@ -105,13 +112,17 @@ main p {
     font-size: 1.2rem;
 }
 
-#page-logo {
+.page-logo {
+    max-height: 20%;
+}
+
+.page-logo svg {
     left: 50%;
     z-index: -1;
     width: 90vw;
     bottom: -25vh;
     position: absolute;
-    pointer-events: none;
+    /* pointer-events: none; */
     transform: translateX(-50%);
 }
 
@@ -129,6 +140,7 @@ main p {
     list-style: none;
     color: #3a3a3a;
     position: absolute;
+    text-align: center;
     transform: translateX(-50%);
 
     background: rgba(255, 255, 255, 0.6);
