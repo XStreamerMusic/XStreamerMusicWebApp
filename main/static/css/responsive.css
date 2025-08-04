@@ -5,12 +5,6 @@
     }
 } */
 
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-    main {
-        /* width: 75%; */
-    }
-}
-
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
     
     main {
@@ -63,7 +57,6 @@
         width: auto;
         height: 100%;
         left: auto;
-        pointer-events:all;
         transform: translateY(-55%);
     }
 }
@@ -74,11 +67,30 @@
         font-size: 3rem;
     }
 
-    #waitlist {
-        width: 60%;
+    main p {
+        font-size: .9rem;
     }
 
-    #responsive-logo {
-        right: -10%;
+    #waitlist {
+        width: 40%;
     }
+    
+    .page-logo svg {
+        right: -20%;
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    main p {
+        font-size: 1.2rem;
+    }
+/* 
+    #waitlist {
+        width: 50%;
+    } */
 }

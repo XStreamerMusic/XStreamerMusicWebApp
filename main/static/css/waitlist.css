@@ -54,7 +54,7 @@ main {
 }
 
 .main-content {
-    margin: auto 1rem;
+    margin: auto 0;
     text-align: center;
 }
 
@@ -63,11 +63,14 @@ main h1 {
     font-weight: 500;
     white-space: nowrap;
     margin-bottom: 2rem;
+    /* text-transform: uppercase; */
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.2);
     font-family: 'Special Gothic Expanded One', 'Kanit';
 }
 
 main p {
-    font-weight: 500;
+    width: 100%;
+    font-weight: 400;
     margin-bottom: 2rem;
 }
 
