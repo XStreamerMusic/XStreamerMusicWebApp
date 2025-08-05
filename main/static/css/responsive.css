@@ -1,9 +1,22 @@
-/* @media only screen and (min-height: 700px) and (orientation: portrait) {
-    #page-logo {
-        width: 120vw;
-        bottom: -30vh;
+@media only screen and (min-width: 720px) and (orientation: portrait) {
+    
+    .logo {
+        width: 30%
     }
-} */
+
+    .page-logo svg {
+        bottom: -35vh;
+    }
+
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    #content {
+        height: 70%;
+    }
+}
 
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
     
@@ -13,7 +26,7 @@
     }
     
     #content {
-        width: 60%;
+        width: 70%;
         height: 90%;
 
         align-items: flex-start;
