@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.ngrok-free.app']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
-    'https://65073726e69a.ngrok-free.app',
+    'https://d3d2b46ca0bc.ngrok-free.app',
 ]
 
 # Application definition
