@@ -36,6 +36,7 @@ main {
     color: #fff;
     display: flex;
     padding: 2rem 1rem;
+    align-items: center;
     flex-direction: column;
 }
 

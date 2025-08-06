@@ -83,6 +83,24 @@
     }
 }
 
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .logo {
+        width: 25%;
+    }
+
+    #content {
+        height: 60%;
+    }
+
+    main p {
+        margin-bottom: 3rem;
+    }
+
+    #waitlist {
+        width: 75%;
+    }
+}
+
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
     
     /* main {
