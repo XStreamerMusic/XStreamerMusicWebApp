@@ -95,15 +95,15 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # For Vercel/Supabase deployment, construct DATABASE_URL from individual components
-if os.getenv('DB_HOST'):  # Production (Vercel)
-    DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', '5432')}/{os.getenv('DB_NAME')}"
+if os.getenv('DATABASE_URL'):  # Production (Vercel)
     DATABASES = {
         'default': dj_database_url.config(
-            default=DATABASE_URL,
+            default=os.getenv('DATABASE_URL'),
             conn_max_age=600,
             conn_health_checks=True,
         )
     }
+
 else:  # Local development
     DATABASES = {
         'default': dj_database_url.config(
