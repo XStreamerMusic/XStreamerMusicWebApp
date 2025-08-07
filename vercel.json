@@ -1,13 +1,11 @@
+
 {
   "version": 2,
   "builds": [
     {
       "src": "XStreamerMusicWebApp/wsgi.py",
       "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+      "config": {"maxLambdaSize": "15mb", "runtime": "python3.x"}
     },
     {
       "src": "build_files.sh",
@@ -19,16 +17,12 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
-      "src": "/staticfiles/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
   ]
 }
