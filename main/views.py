@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.http import JsonResponse
+from datetime import datetime
 
 # Create your views here.
 
@@ -59,3 +61,13 @@ def join_waitlist(request):
         else:
             messages.error(request, e)
             return redirect('waitlist')
+
+
+def ping_db(request):
+    timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+    email = f"sample{timestamp}@xstreamermusic.xyz"
+    
+    sample = Waitlist.objects.create(email=email)
+    sample.delete()
+
+    return JsonResponse({"status": "pinged", "email": email})

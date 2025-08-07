@@ -28,13 +28,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False")
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ['xstreamermusicwebapp.onrender.com', 'xstreamermusic.xyz']
+# Updated allowed hosts for Vercel
+ALLOWED_HOSTS = [
+    'xstreamermusicwebapp.onrender.com', 
+    'xstreamermusic.xyz', 
+    'xstreamer-music-web-app.vercel.app',  # Your Vercel domain
+    '.vercel.app',  # All Vercel subdomains
+    '127.0.0.1',
+    'localhost'
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'xstreamermusic.onrender.com',
-    'xstreamermusic.xyz'
+    'https://xstreamermusic.onrender.com',
+    'https://xstreamermusic.xyz',
+    'https://xstreamer-music-web-app.vercel.app',  # Your Vercel domain
 ]
 
 # Application definition
@@ -51,6 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Moved WhiteNoise higher
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,16 +92,22 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'))
-}
+# For Vercel/Supabase deployment, construct DATABASE_URL from individual components
+if os.getenv('DB_HOST'):  # Production (Vercel)
+    DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT', '5432')}/{os.getenv('DB_NAME')}"
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
+else:  # Local development
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_URL', f'sqlite:///{BASE_DIR}/db.sqlite3')
+        )
+    }
 
 
 # Password validation
@@ -128,20 +144,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Email configuration
 EMAIL_BACKEND = os.getenv("EMAIL_BACKEND")
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL")
+
+# Production security settings
+if not DEBUG:
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
