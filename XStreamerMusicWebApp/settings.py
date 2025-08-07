@@ -94,22 +94,28 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# For Vercel/Supabase deployment, construct DATABASE_URL from individual components
-if os.getenv('DATABASE_URL'):  # Production (Vercel)
+#  For Vercel/Supabase deployment, construct DATABASE_URL from individual components
+
+if os.getenv('DB_HOST'):  # Production (Vercel)
     DATABASES = {
-        'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL'),
-            conn_max_age=600,
-            conn_health_checks=True,
-        )
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME', "postgres"),
+            'USER': os.getenv('DB_USER', "postgres"),
+            'PASSWORD': os.getenv('DB_PASS', ""),
+            'HOST': os.getenv('DB_HOST'),
+            'PORT': os.getenv('DB_PORT', default='5432'),
+        }
     }
 
 else:  # Local development
     DATABASES = {
-        'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL', f'sqlite:///{BASE_DIR}/db.sqlite3')
-        )
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
+
 
 
 # Password validation
