@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False")
 
-ALLOWED_HOSTS = ['xstreamermusic.onrender.com', 'xstreamermusic.xyz']
+ALLOWED_HOSTS = ['xstreamermusicwebapp.onrender.com', 'xstreamermusic.xyz']
 
 CSRF_TRUSTED_ORIGINS = [
     'xstreamermusic.onrender.com',
