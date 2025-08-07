@@ -1,1 +1,1 @@
-web: gunicorn xstreamermusicwebapp.wsgi
+web: gunicorn XStreamerMusicWebApp.wsgi
