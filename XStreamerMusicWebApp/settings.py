@@ -33,17 +33,19 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 # Updated allowed hosts for Vercel
 ALLOWED_HOSTS = [
     'xstreamermusicwebapp.onrender.com', 
-    'xstreamermusic.xyz', 
-    'xstreamer-music-web-app.vercel.app',  # Your Vercel domain
-    '.vercel.app',  # All Vercel subdomains
+    'xstreamermusic.xyz',  # Already there
+    'www.xstreamermusic.xyz',  # Add www version
+    'xstreamer-music-web-app.vercel.app',
+    '.vercel.app',
     '127.0.0.1',
     'localhost'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://xstreamermusic.onrender.com',
-    'https://xstreamermusic.xyz',
-    'https://xstreamer-music-web-app.vercel.app',  # Your Vercel domain
+    'https://xstreamermusic.xyz',  # Already there
+    'https://www.xstreamermusic.xyz',  # Add www version
+    'https://xstreamer-music-web-app.vercel.app',
 ]
 
 # Application definition
