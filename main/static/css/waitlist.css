@@ -85,7 +85,7 @@ main h1 span {
 }
 
 main p {
-    width: 100%;
+    /* width: 100%; */
     font-weight: 400;
     margin-bottom: 2rem;
 }
@@ -96,12 +96,12 @@ main p {
     display: flex;
 
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #waitlist input {
@@ -138,6 +138,7 @@ main p {
     z-index: -2;
     position: fixed;
 
+    pointer-events: none;
     background: #8C52FF;
     background: -webkit-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     background: -moz-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
@@ -151,6 +152,7 @@ main p {
     height: 22%;
     max-height: 22%;
     position: relative;
+    pointer-events: none;
 }
 
 .page-logo svg {
