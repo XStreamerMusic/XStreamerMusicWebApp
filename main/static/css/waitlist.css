@@ -2,61 +2,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', 'Kanit';
+    font-family: 'Inter', 'Special Gothic Expanded One';
+    transition: height .3s ease;
 }
 
 html {
-    height: 100%;
-    /* max-height: 200vh; */
+    height: 100dvh;
     overflow: hidden;
-    background: #8C52FF;
-    background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    background-attachment: fixed;
+    max-height: 100dvh;
+    background: #000;
+
 }
 
 body {
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+html, body {
+    padding-top: env(safe-area-inset-top);
 }
 
 .noise-background {
     top: 0;
     left: 0;
     width: 100%;
+    opacity: .3;
     z-index: -1;
     height: 100%;
     position: fixed;
     object-fit: cover;
+    pointer-events: none;
 }
 
 main {
+    height: 100%;
     color: #fff;
     display: flex;
-    height: 100dvh;
-    padding: 2rem 1rem;
-    flex-direction: column;
-    transition: height .3s ease;
-}
-
-#content {
-    height: 75%;
-    display: flex;
+    padding: 1rem;
     align-items: center;
     flex-direction: column;
 }
 
 .logo {
-    width: 40%;
-    max-width: 200px;
-    max-height: 200px;
-    margin-bottom: 2rem;
+    width: auto;
+    height: 8%;
+    /* margin-bottom: 2rem; */
+    /* max-width: 200px;
+    max-height: 200px; */
 }
 
-.main-content {
-    margin: auto 0;
+#content {
+    height: 70%;
+    display: flex;
     text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.responsive-logo {
+    display: none;
 }
 
 main h1 {
@@ -65,12 +71,25 @@ main h1 {
     white-space: nowrap;
     margin-bottom: 2rem;
     /* text-transform: uppercase; */
-    text-shadow: 1px 2px 5px rgba(0,0,0,0.2);
-    font-family: 'Special Gothic Expanded One', 'Kanit';
+    /* text-shadow: 1px 2px 5px rgba(0,0,0,0.2); */
+    font-family: 'Special Gothic Expanded One';
+}
+
+main h1 span {
+    font-family: inherit;
+
+    background: #8C52FF;
+    background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    /* background-attachment: fixed; */
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main p {
-    width: 100%;
+    /* width: 100%; */
     font-weight: 400;
     margin-bottom: 2rem;
 }
@@ -81,12 +100,12 @@ main p {
     display: flex;
 
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #waitlist input {
@@ -116,23 +135,48 @@ main p {
     font-size: 1.2rem;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.gradient-backdrop {
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -2;
+    position: fixed;
+
+    pointer-events: none;
+    background: #8C52FF;
+    background: -webkit-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+
+    mask-image: linear-gradient(transparent, black);
+    -webkit-mask-image: linear-gradient(transparent, black);
+}
+
 .page-logo {
-    max-height: 20%;
+    height: 22%;
+    max-height: 22%;
+    position: relative;
+    pointer-events: none;
 }
 
 .page-logo svg {
+    top: 0;
     left: 50%;
     z-index: -1;
     width: 90vw;
-    bottom: -25vh;
+    /* bottom: -25vh; */
     position: absolute;
-    /* pointer-events: none; */
+    pointer-events: none;
     transform: translateX(-50%);
-}
-
-#responsive-logo {
-    opacity: 0;
-    visibility: hidden;
 }
 
 .messages {
@@ -170,4 +214,11 @@ main p {
 .messages .inner-icon {
     font-size: 1rem;
     margin-inline-end: .5rem;
+}
+
+.invisible {
+    opacity: 0;        
+    visibility: hidden;
+    transition: opacity 1s ease,
+                visibility 1s ease;
 }

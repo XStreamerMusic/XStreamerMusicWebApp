@@ -1,15 +1,17 @@
 @media only screen and (min-width: 720px) and (orientation: portrait) {
     
     .logo {
-        width: 30%
+        width: 30%;
+        height: auto;
     }
 
     .page-logo svg {
-        bottom: -35vh;
+        width: 75vw;
+        bottom: -30vh;
     }
 
     main h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 2rem;
     }
     
@@ -18,92 +20,214 @@
     }
 }
 
-@media only screen and (min-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 640px) and (orientation: landscape) {
     
-    main {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    #content {
-        width: 70%;
-        height: 90%;
-
-        align-items: flex-start;
+    html {
+        height: 100dvh;
     }
 
     .logo {
-        max-width: 160px;
-        margin-inline-start: 1rem;
+        display: none;
     }
 
-    .main-content {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    main {
+        padding: 2rem 0;
+        padding-left: 4rem;
+        flex-direction: row;
+    }
+    
+    #content {
+        width: 75%;
+        height: 100%;
+        text-align: left;
+        visibility: visible;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     main h1 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
 
-    main p {
-        width: 80%;
-        margin-bottom: 3rem;
+    main p span {
+        display: none;
+        visibility: hidden;
     }
 
     #waitlist {
-        width: 60%;
+        width: 80%;
+    }
+
+    .gradient-backdrop {
+        right: 0;
+        width: 30%;
+        height: 100%;
+        visibility: visible;
+
+        mask-image: linear-gradient(to right, transparent, black);
+        -webkit-mask-image: linear-gradient(to right, transparent, black);
     }
 
     .page-logo {
-        width: 30%;
         height: 100%;
-        max-height: none;
     }
-    
+
     .page-logo svg {
-        top: 50%;
-        right: -30%;
         width: auto;
-        height: 100%;
-        left: auto;
+        height: 100dvh;
+
+        top: 50%;
+        left: unset;
         transform: translateY(-55%);
     }
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .logo {
+        width: 25%;
+        height: auto;
+    }
 
-    main h1 {
-        font-size: 3rem;
+    #content {
+        height: 60%;
     }
 
     main p {
-        font-size: .9rem;
+        margin-bottom: 3rem;
     }
 
     #waitlist {
-        width: 40%;
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+    html, body, #content, main {
+        overflow: hidden;
     }
     
+    main {
+        padding-left: 0;
+        padding: 2rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 8%;
+        width: auto;
+        display: flex;
+    }
+
+    #content {
+        width: 70%;
+        height: 80%;
+        padding-left: 3rem;
+    }
+
+    main h1 {
+        font-size: 2.2rem;
+    }
+
+    main p span {
+        display: block;
+        visibility: visible;
+    }
+
+    .page-logo{
+        height: 0;
+        position: unset;
+    }
+
     .page-logo svg {
-        right: -20%;
+        right: -30vw;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+
+    .logo {
+        width: auto;
+        height: 8%;
+    }
+
+    main {
+        align-items: center;
+    }
+
+    main h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    main p {
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    #content {
+        height: 70%;
+        padding-left: 0;
+        align-items: center;
+    }
+
+    #waitlist {
+        width: 50%;
+    }
+
+    #waitlist:hover {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #waitlist:focus-within {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .page-logo {
+        width: 100%;
+        height: 10%;
+        position: relative;
+    }
+
+    .page-logo svg {
+        top: unset;
+        left: 50%;
+        width: 30vw;
+        right: unset;
+        height: auto;
+        bottom: -45vh;
+        transform: translateX(-50%);
+    }
+
+    .gradient-backdrop {
+        width: 100%;
+        height: 35%;
+        right: unset;
+        visibility: visible;
+
+        mask-image: linear-gradient(transparent, black);
+        -webkit-mask-image: linear-gradient(transparent, black);
+    }
+
+    .messages {
+        width: 20%;
     }
 }
 
 @media only screen and (min-width: 1650px) {
-
     main h1 {
         font-size: 3rem;
+        margin-bottom: 2rem;
     }
 
     main p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        margin-bottom: 3rem;
     }
-/* 
+
     #waitlist {
-        width: 50%;
-    } */
+        transition: all .3s ease;
+    }
 }
