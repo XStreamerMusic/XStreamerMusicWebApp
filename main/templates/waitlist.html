@@ -5,8 +5,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="XStreamer Music">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+
+    <meta property="og:title" content="XStreamer Music - The Future of SA Music" />
+    <meta property="og:description" content="Be first in line for the new wave in South African music. Join the XStreamer Music waitlist today!" />
+    <meta property="og:image" content="https://xstreamermusic.xyz/static/images/social/xstreamer-og-image.jpg" />
+    <meta property="og:url" content="https://xstreamermusic.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XStreamer Music" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="XStreamer Music - The Future of SA Music" />
+    <meta name="twitter:description" content="Be first in line for the new wave in South African music. Join the XStreamer waitlist today!" />
+    <meta name="twitter:image" content="https://xstreamermusic.xyz/static/images/social/xstreamer-og-image.jpg" />
+    <meta name="twitter:site" content="@XStreamerMusic" />
+    <meta name="twitter:creator" content="@XStreamerMusic" />
+    <meta name="twitter:domain" content="xstreamermusic.xyz" />
     
+    <link rel="canonical" href="https://xstreamermusic.xyz/" />
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/brand/icons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/brand/icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/brand/icons/favicon-16x16.png' %}">
@@ -16,21 +38,38 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="{% static 'css/waitlist.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
-    <title>{{page_title}} - XStreamer Music</title>
+    <title>{% if page_title %}{{ page_title }} - XStreamer Music{% else %}XStreamer Music{% endif %}</title>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "XStreamer Music",
+        "url": "https://xstreamermusic.xyz/",
+        "description": "Be first in line for the new wave in South African music. Join the XStreamer Music waitlist today!",
+        "publisher": {
+            "@type": "Organization",
+            "name": "XStreamer Music",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://xstreamermusic.xyz/static/images/brand/logo.png"
+            }
+        }
+        }
+    </script>
+
 </head>
 <body>
     <main>
-        <img class="logo" src="{% static 'images/brand/logo.png' %}" alt="">
+        <img class="logo" src="{% static 'images/brand/logo.png' %}" alt="XStreamer Music official logo - white against transparent background">
         <section id="content">
             <h1>Something Big Is Coming<br>
                 <span>Join The New Wave</span>
@@ -47,14 +86,14 @@
             
             <form method="POST" action="{% url 'join_waitlist' %}" id="waitlist">
                 {% csrf_token %}
-                <label for="id_email" hidden aria-hidden="true">Email Address</label>
-                <input type="email" name="email" id="id_email" placeholder="Enter your Email Address">
+                <label for="id_email" class="visually-hidden">Email Address</label>
+                <input type="email" name="email" id="id_email" placeholder="Enter your Email Address" required>
                 <button type="submit" id="waitlist-submit">
-                    <ion-icon name="arrow-forward">Waitlist</ion-icon>
+                    <ion-icon name="arrow-forward"></ion-icon>
                 </button>
             </form>
             {% if messages %}
-                <ul class="messages">
+                <ul class="messages" id="messages">
                     <ion-icon class="main-icon" name="notifications"></ion-icon>
                     {% for message in messages %}
                         <li>
@@ -81,5 +120,14 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const message = document.getElementById('messages');
+
+        setTimeout(() => {
+            message.classList.toggle('invisible');
+        }, 7000);
+        
+    </script>
 </body>
 </html>
