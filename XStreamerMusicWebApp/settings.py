@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -27,13 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "False")
 
-ALLOWED_HOSTS = ['127.0.0.1', '.ngrok-free.app']
+ALLOWED_HOSTS = ['xstreamermusic.onrender.com', 'xstreamermusic.xyz']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://127.0.0.1:8000',
-    'https://d3d2b46ca0bc.ngrok-free.app',
+    'xstreamermusic.onrender.com',
+    'xstreamermusic.xyz'
 ]
 
 # Application definition
@@ -81,11 +82,15 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'))
 }
 
 
@@ -124,7 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
