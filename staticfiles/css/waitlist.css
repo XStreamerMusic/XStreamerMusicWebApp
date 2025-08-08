@@ -193,6 +193,7 @@ main h1, main p {
     /* bottom: -25vh; */
     position: absolute;
     pointer-events: none;
+    transform: translateX(-50%);
     animation: fadein 1.5s ease-in-out forwards;
 }
 
