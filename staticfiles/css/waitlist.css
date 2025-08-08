@@ -50,6 +50,8 @@ main {
     /* margin-bottom: 2rem; */
     /* max-width: 200px;
     max-height: 200px; */
+
+    animation: logorise 1.5s ease-in-out forwards;
 }
 
 #content {
@@ -73,6 +75,8 @@ main h1 {
     /* text-transform: uppercase; */
     /* text-shadow: 1px 2px 5px rgba(0,0,0,0.2); */
     font-family: 'Special Gothic Expanded One';
+
+    animation: fadenrise 1.5s ease-in-out forwards;
 }
 
 main h1 span {
@@ -94,6 +98,10 @@ main p {
     margin-bottom: 2rem;
 }
 
+main h1, main p {
+    animation: fadenrise 1.5s ease-in-out forwards;
+}
+
 #waitlist {
     width: 100%;
     padding: 4px;
@@ -106,6 +114,9 @@ main p {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    transform-origin: left;
+    animation: formwidth 1s ease-out forwards;
 }
 
 #waitlist input {
@@ -116,18 +127,22 @@ main p {
     outline: none;
     padding: .75rem;
     background: none;
+    transition: opacity 1s ease-in-out;
 }
 
 #waitlist input::placeholder {
     color: #ffffff;
+    transition: opacity 1s ease-in-out;
 }
 
 #waitlist-submit {
     flex: .3;
+    opacity: 0;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     background-color: #fff;
+    animation: fadein 1s ease-in-out 1.5s forwards;
 }
 
 #waitlist-submit ion-icon {
@@ -159,6 +174,8 @@ main p {
 
     mask-image: linear-gradient(transparent, black);
     -webkit-mask-image: linear-gradient(transparent, black);
+
+    animation: gradient_rise 1s ease-in-out;
 }
 
 .page-logo {
@@ -176,7 +193,7 @@ main p {
     /* bottom: -25vh; */
     position: absolute;
     pointer-events: none;
-    transform: translateX(-50%);
+    animation: pagelogorise 1.5s ease-in-out forwards;
 }
 
 .messages {

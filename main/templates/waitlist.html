@@ -45,6 +45,7 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="{% static 'css/waitlist.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}">
 
     <title>{% if page_title %}{{ page_title }} - XStreamer Music{% else %}XStreamer Music{% endif %}</title>
 
@@ -98,7 +99,7 @@
             <form method="POST" action="{% url 'join_waitlist' %}" id="waitlist">
                 {% csrf_token %}
                 <label for="id_email" class="visually-hidden">Email Address</label>
-                <input type="email" name="email" id="id_email" placeholder="Enter your Email Address" required>
+                <input type="email" name="email" id="id_email" placeholder="Enter your email address" required>
                 <button type="submit" id="waitlist-submit">
                     <ion-icon name="arrow-forward"></ion-icon>
                 </button>
@@ -132,13 +133,17 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <script>
-        const message = document.getElementById('messages');
+    <script>  
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            const message = document.getElementById('messages');
+            
+            setTimeout(() => {
+                message.classList.toggle('invisible');
+            }, 7000);
 
-        setTimeout(() => {
-            message.classList.toggle('invisible');
-        }, 7000);
-        
+        });
+
     </script>
 </body>
 </html>
