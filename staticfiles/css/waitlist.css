@@ -193,7 +193,7 @@ main h1, main p {
     /* bottom: -25vh; */
     position: absolute;
     pointer-events: none;
-    animation: pagelogorise 1.5s ease-in-out forwards;
+    animation: fadein 1.5s ease-in-out forwards;
 }
 
 .messages {
