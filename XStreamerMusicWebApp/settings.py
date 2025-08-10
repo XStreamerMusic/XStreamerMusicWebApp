@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 
 #  For Vercel/Supabase deployment, construct DATABASE_URL from individual components
 
-if not DEBUG:  # Production (Vercel)
+if DEBUG == False:  # Production (Vercel)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
