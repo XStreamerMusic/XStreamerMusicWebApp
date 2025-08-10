@@ -97,26 +97,23 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 
 #  For Vercel/Supabase deployment, construct DATABASE_URL from individual components
 
-if DEBUG == False:  # Production (Vercel)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME', "postgres"),
-            'USER': os.getenv('DB_USER', "postgres"),
-            'PASSWORD': os.getenv('DB_PASS', ""),
-            'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT', default='5432'),
-        }
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
-else:  # Local development
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', "postgres"),
+        'USER': os.getenv('DB_USER', "postgres"),
+        'PASSWORD': os.getenv('DB_PASS', ""),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT', default='5432'),
     }
-
+}
 
 
 # Password validation
