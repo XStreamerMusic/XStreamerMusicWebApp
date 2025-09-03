@@ -1,0 +1,26 @@
+@media (max-width: 1650px) {
+    
+    .header {
+        margin-bottom: 1rem;
+    }
+
+    .sidebar {
+        flex: .25;
+    }
+    
+    .sidebar nav ul li.active {
+        background: #ffffff10;
+    }
+    
+    .sidebar nav ul li a {
+        font-size: .8rem;
+    }
+    
+    .sidebar nav ul li a ion-icon {
+        font-size: 1rem;
+    }
+    
+    #id_search {
+        font-size: .8rem;
+    }
+}

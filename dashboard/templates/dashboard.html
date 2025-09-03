@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
     
     <!-- stylesheets -->
-    <link rel="stylesheet" href="{% static 'css/dashboard-white-glass.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/dashboard-dark-glass.css' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'css/dashboard-responsive.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-white-glass.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/dashboard/dashboard-dark-glass.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/animations.css' %}">
 
     <title>{% if page_title %}{{ page_title }} - XStreamer Music{% else %}XStreamer Music{% endif %}</title>
@@ -50,6 +50,9 @@
                 
                 <div class="searchbar">
                     <input type="search" name="search" id="id_search" placeholder="Search Songs, Albums or Artists...">
+                    <button id="search-submit" type="submit">
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </button>
                 </div>
             </div>
             <nav>
@@ -88,20 +91,25 @@
             </nav>
         </aside>
         <main class="data-main">
-            {% if waitlisters %}
-                <article id="waitlisters" class="data-block">
-                    <div class="data-header">
-                        <h3>Waitlisters</h3>
-                    </div>
-                    <ul>
-                        {% for waitlister in waitlisters %}
-                            <li>
-                                {{waitlister.email}}
-                            </li>
-                        {% endfor%}
-                    </ul>
-                </article>
-            {% endif %}
+            <div class="data-row">
+                {% if waitlisters %}
+                    <article id="waitlisters" class="data-block">
+                        <div class="data-header">
+                            <h3>Waitlisters</h3>
+                        </div>
+                        <ul>
+                            {% for waitlister in waitlisters %}
+                                <li>
+                                    {{waitlister.email}}
+                                </li>
+                            {% endfor%}
+                        </ul>
+                    </article>
+                {% endif %}
+            </div>
+            <div class="data-row">
+                
+            </div>
         </main>
     </section>
 

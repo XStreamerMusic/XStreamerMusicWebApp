@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'XStreamerMusicWebApp.wsgi.application'
 
 #  For Vercel/Supabase deployment, construct DATABASE_URL from individual components
 
-if not DEBUG:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -153,11 +153,15 @@ USE_TZ = True
 
 # Static files configuration
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'staticfiles')
-# ]
+if DEBUG:
+    STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Simplified WhiteNoise configuration for Vercel
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
