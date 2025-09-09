@@ -90,10 +90,6 @@ nav > .logo {
     transform: translateY(-50%) translateX(.05rem);
 }
 
-header {
-    /* border: 1px solid red; */
-}
-
 header h1 {
     color: #fff;
     margin: 1rem 0;

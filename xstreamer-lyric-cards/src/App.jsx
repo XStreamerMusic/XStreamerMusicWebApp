@@ -1,6 +1,7 @@
 import Nav from './Nav';
-import CardRatio from './CardRatio/CardRatio';
 import { useState } from 'react';
+import { CardProvider } from './CardContext';
+import CardRatio from './CardRatio/CardRatio';
 
 function App() {
 
@@ -10,7 +11,9 @@ function App() {
       <header>
         <h1>Lyric Cards</h1>
       </header>
-      <CardRatio />
+      <CardProvider>
+        <CardRatio />
+      </CardProvider>
     </>
   )
 }

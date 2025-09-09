@@ -1,9 +1,11 @@
 import './CardRatio.css';
-import { useState, useEffect, useRef } from "react";
+import { CardContext } from '../CardContext';
+import { useContext } from 'react';
+import { rescale } from "../utils/rescale";
 
 function CardRatio() {
 
-    const [ratio, setRatio] = useState("square");
+    const { ratioId, updateRatio } = useContext(CardContext);
 
     const ratios = [
         {id: "instagram", width: 1080, height: 1350 },
@@ -11,43 +13,34 @@ function CardRatio() {
         {id: "square", width: 1080, height: 1080 },
     ]
 
-    function rescale(width, height, maxWidthRem, base = 16) {
-        const maxWidthPx = maxWidthRem * base;
-        const scale = maxWidthPx / width;
-
-        return {
-            width: maxWidthRem,
-            height: (height * scale) / base
-        };
-    }
-
-    const ratioButtons = ratios.map((ratioButton) => {
-        const { width, height } = rescale(ratioButton.width, ratioButton.height, 3);
-
-        return (
-            <button
-                key={ratioButton.id}
-                className={`ratio-button ${ratio === ratioButton.id ? "active" : ""}`}
-                onClick={() => setRatio(ratioButton.id)}
-            >
-                <span
-                className="visual"
-                style={{ width: `${width}rem`, height: `${height}rem` }}
-                />
-                {ratioButton.id}
-                <span className="aspect">
-                {`${ratioButton.width}x${ratioButton.height}`}
-                </span>
-            </button>
-            );
-    });
-
     return (
         <section id="ratios">
             <h2>Pick a ratio</h2>
             <span>This is the size your lyric card will be...</span>
             <div className='container'>
-                {ratioButtons}
+                {ratios.map((r) => {
+                    const { width: visualWidth, height: visualHeight } = rescale(r.width, r.height, 3);
+
+                    return (
+                        <button
+                            key={r.id}
+                            className={`ratio-button ${ratioId === r.id ? "active" : ""}`}
+                            onClick={() => updateRatio(r.id, r.width, r.height, 20)} // 20rem for main preview
+                        >
+                            <span
+                                className="visual"
+                                style={{
+                                    width: `${visualWidth}rem`,
+                                    height: `${visualHeight}rem`
+                                }}
+                            />
+                            {r.id}
+                            <span className="aspect">
+                                {`${r.width}x${r.height}`}
+                            </span>
+                        </button>
+                    );
+                })}
             </div>
         </section>
     )
