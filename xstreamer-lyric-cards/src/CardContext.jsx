@@ -1,20 +1,19 @@
 // CardContext.jsx
 import { createContext, useState } from "react";
-import { rescale } from "./utils/rescale";
 
 export const CardContext = createContext();
 
 export function CardProvider({ children }) {
-  const [ratioId, setRatioId] = useState("square");
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [ratioId, setRatioId] = useState("twitter");
+  const [ratioSize, setRatioSize] = useState({ width: 1600, height: 900 });
 
-  const updateRatio = (id, width, height, maxWidthRem = 20) => {
+  const updateRatio = (id, width, height) => {
     setRatioId(id);
-    setDimensions(rescale(width, height, maxWidthRem));
+    setRatioSize({ width, height });
   };
 
   return (
-    <CardContext.Provider value={{ ratioId, dimensions, updateRatio }}>
+    <CardContext.Provider value={{ ratioId, ratioSize, updateRatio }}>
       {children}
     </CardContext.Provider>
   );
