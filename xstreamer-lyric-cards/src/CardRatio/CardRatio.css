@@ -1,0 +1,44 @@
+#ratios {
+}
+
+#ratios > span {
+    color: #00000080;
+    font-size: .8rem;
+}
+
+#ratios .container {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ratio-button {
+    display: flex;
+    padding: .5rem;
+    min-width: 5rem;
+    font-size: 1rem;
+    background: none;
+    color: #00000080;
+    align-items: center;
+    border-radius: .25rem;
+    flex-direction: column;
+    border: 2px solid transparent;
+    transition: .3s ease border,
+                .3s ease background-color;
+}
+
+.ratio-button.active {
+    background-color: #00000020;
+}
+
+.ratio-button .aspect {
+    font-size: .75rem;
+    color: #00000060;
+
+}
+
+.ratio-button .visual {
+    border: 2px solid #00000050;
+    background-color: #00000030;
+}
