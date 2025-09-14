@@ -38,7 +38,8 @@ ALLOWED_HOSTS = [
     'xstreamer-music-web-app.vercel.app',
     '.vercel.app',
     '127.0.0.1',
-    'localhost'
+    'localhost',
+    '.ngrok-free.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -53,6 +54,7 @@ CSRF_TRUSTED_ORIGINS = [
 INSTALLED_APPS = [
     'main',
     'dashboard',
+    'giveaways',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

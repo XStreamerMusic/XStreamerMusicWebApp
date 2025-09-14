@@ -1,12 +1,10 @@
-from django.db import IntegrityError
 from .models import Waitlist
 from .forms import WaitlistForm
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.http import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, Http404, JsonResponse
 from datetime import datetime
 
 # Create your views here.

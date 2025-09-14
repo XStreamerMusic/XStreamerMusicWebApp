@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="XStreamer Music">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+
+    <meta property="og:title" content="XStreamer Music - The Future of SA Music" />
+    <meta property="og:description" content="Be first in line for the new wave in South African music. Join the XStreamer Music waitlist today!" />
+    <meta property="og:image" content="https://xstreamermusic.xyz/static/images/brand/xstreamer-og-image.png" />
+    <meta property="og:url" content="https://xstreamermusic.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XStreamer Music" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="XStreamer Music - The Future of SA Music" />
+    <meta name="twitter:description" content="Be first in line for the new wave in South African music. Join the XStreamer waitlist today!" />
+    <meta name="twitter:image" content="https://xstreamermusic.xyz/static/images/brand/xstreamer-og-image.png" />
+    <meta name="twitter:site" content="@XStreamerMusic" />
+    <meta name="twitter:creator" content="@XStreamerMusic" />
+    <meta name="twitter:domain" content="xstreamermusic.xyz" />
+    
+    <link rel="canonical" href="https://xstreamermusic.xyz/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/brand/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/brand/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/brand/icons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/brand/icons/site.webmanifest' %}">
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/giveaways/landing.css' %}">
+    <link rel="stylesheet" href="{% static 'css/giveaways/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animations.css' %}">
+
+    <title>{% if page_title %}{{ page_title }} - XStreamer Music{% else %}XStreamer Music{% endif %}</title>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "XStreamer Music",
+        "url": "https://xstreamermusic.xyz/",
+        "description": "Be first in line for the new wave in South African music. Join the XStreamer Music waitlist today!",
+        "publisher": {
+            "@type": "Organization",
+            "name": "XStreamer Music",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://xstreamermusic.xyz/static/images/brand/logo.png"
+            }
+        }
+        }
+    </script>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-86MGKDYWFM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-86MGKDYWFM');
+</script>
+
+<body>
+    <header>
+        <img class="logo" src="{% static 'images/brand/logo.png' %}" alt="XStreamer Music official logo - white against transparent background">
+    </header>
+    <main>
+        <section id="content">
+            <h1>Congratulations!<br>
+                <span>Claim Your Prize</span>
+            </h1>
+            <p>
+                <b>Fill in your details,</b><br>and we'll give you a
+                shout when your prize is ready and on its way!
+            </p>
+            
+            <form action="{% url 'giveaway-claim' giveaway.public_id token %}" id="giveaway-claim" method="post">
+                {% csrf_token %}
+                
+                <div class="form-block">
+                    <label for="id_first_name" class="visually-hidden">First name:</label>
+                    <input type="text" name="first_name" maxlength="255" required="" id="id_first_name" placeholder="First Name:">
+                </div>
+
+                <div class="form-block">
+                    <label for="id_last_name" class="visually-hidden">Last name:</label>
+                    <input type="text" name="last_name" maxlength="255" required="" id="id_last_name" placeholder="Last Name:">
+                </div>
+
+                <div class="form-block">
+                    <label for="id_email" class="visually-hidden">Email Address:</label>
+                    <input type="email" name="email" maxlength="320" required="" id="id_email" placeholder="Email Address:">
+                </div>
+
+                <div class="form-block">
+                    <label for="id_x_username" class="visually-hidden">Your X (Twitter) Username:</label>
+                    <input type="text" name="x_username" required="" id="id_x_username" placeholder="X username:">
+                </div>
+
+                <button id="claim-submit" type="submit">
+                    <span>Claim Your Prize</span>
+                </button>
+            </form>
+            
+            {% if messages %}
+                <ul class="messages" id="messages">
+                    <ion-icon class="main-icon" name="notifications"></ion-icon>
+                    {% for message in messages %}
+                        <li>
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </section>
+    </main>
+
+    <div class="gradient-backdrop"></div>
+    <!-- <img src="{% static 'images/noise_16x9.png' %}" alt="noise background" class="noise-background"> -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>  
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            const message = document.getElementById('messages');
+            
+            setTimeout(() => {
+                message.classList.toggle('invisible');
+            }, 7000);
+
+        });
+
+    </script>
+</body>
+</html>
