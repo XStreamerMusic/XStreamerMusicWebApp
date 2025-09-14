@@ -4,13 +4,7 @@ import { useContext } from 'react';
 import { rescale } from "../utils/rescale";
 
 function CardRatio() {
-  const { ratioId, updateRatio } = useContext(CardContext);
-
-  const ratios = [
-    { id: "instagram", width: 1080, height: 1350 },
-    { id: "twitter", width: 1600, height: 900 },
-    { id: "square", width: 1080, height: 1080 },
-  ];
+  const { ratioId, updateRatio, ratios } = useContext(CardContext);
 
   return (
     <section id="ratios">
