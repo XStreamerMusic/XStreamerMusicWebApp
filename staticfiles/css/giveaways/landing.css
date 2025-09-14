@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Special Gothic Expanded One';
+    transition: height .3s ease;
+}
+
+html {
+    height: 100%;
+    background: #000;
+
+}
+
+body {
+    height: 100%;
+}
+
+html, body {
+    padding-top: env(safe-area-inset-top);
+}
+
+header {
+    height: 7rem;
+    display: flex;
+    padding: 2% 0;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    color: #fff;
+    display: flex;
+    padding: 1rem;
+    height: fit-content;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+    max-height: 3rem;
+    animation: logorise 1.5s ease-in-out forwards;
+}
+
+#content {
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#content > p {
+    width: 70%;
+    font-size: .8rem;
+    margin-bottom: 3rem;
+}
+
+.responsive-logo {
+    display: none;
+}
+
+main h1 {
+    font-size: 6vw;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    /* text-transform: uppercase; */
+    /* text-shadow: 1px 2px 5px rgba(0,0,0,0.2); */
+    font-family: 'Special Gothic Expanded One';
+    
+}
+
+main h1 span {
+    font-size: 8.5vw;
+    font-family: inherit;
+
+    background: #8C52FF;
+    background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    /* background-attachment: fixed; */
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main p {
+    /* width: 100%; */
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+main h1, main p {
+    animation: fadenrise 1.5s ease-in-out forwards;
+}
+
+#giveaway-claim {
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    transform-origin: left;
+    animation: fadein 1s ease-out forwards;
+}
+
+#giveaway-claim label {
+    display: block;
+}
+
+#giveaway-claim input {
+    width: 100%;
+    font-size: .8rem;
+    border: none;
+    color: #fff;
+    outline: none;
+    padding: .75rem;
+    border-radius: 4px;
+    background: #00000030;
+}
+
+#giveaway-claim input::placeholder {
+    color: #ffffff75;
+}
+
+#claim-submit {
+    flex: .3;
+    border: none;
+    cursor: pointer;
+    padding: .75rem 0;
+    border-radius: 4px;
+    background-color: #fff;
+    animation: fadein 1s ease-in-out;
+}
+
+#claim-submit span {
+    background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    /* background-attachment: fixed; */
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#claim-submit ion-icon {
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.gradient-backdrop {
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -2;
+    position: fixed;
+    
+    pointer-events: none;
+    background: #8C52FF;
+    background: -webkit-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    background: linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+    
+    mask-image: linear-gradient(transparent, black);
+    -webkit-mask-image: linear-gradient(transparent, black);
+    
+    animation: fadein 5s ease-in-out forwards;
+}
+
+.page-logo {
+    height: 22%;
+    display: none;
+    max-height: 22%;
+    position: relative;
+    pointer-events: none;
+}
+
+.page-logo svg {
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    width: 90vw;
+    /* bottom: -25vh; */
+    position: absolute;
+    pointer-events: none;
+    transform: translateX(-50%);
+    animation: fadein 1.5s ease-in-out forwards;
+}
+
+.messages {
+    left: 50%;
+    width: 90%;
+    z-index: 99;
+    bottom: 1rem;
+    padding: 1rem;
+    list-style: none;
+    color: #3a3a3a;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.messages li {
+    display: flex;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages .main-icon {
+    margin: .5rem 0;
+    font-size: 1.2rem;
+}
+
+.messages .inner-icon {
+    font-size: 1rem;
+    margin-inline-end: .5rem;
+}
+
+.invisible {
+    opacity: 0;        
+    visibility: hidden;
+    transition: opacity 1s ease,
+                visibility 1s ease;
+}

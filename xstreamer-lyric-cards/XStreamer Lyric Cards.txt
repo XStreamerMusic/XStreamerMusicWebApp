@@ -1,7 +1,0 @@
-User - picks an aspect ratio
-Sys - store chosen option in a state variable. option can be updated, preferably in real time
-User - picks an image for the card
-Sys - insert image into frame. Allow for cropping, resizing and replacing of image.
-Sys - A canvas appears, with the chosen image in the background allowing for real-time resizing. cropping should probably come in the form of zooming in/out (overflow: hidden), a textfield with a placeholder
-User - User can type in whatever lyrics they want
-SYS - User can preview that the cardc will look like before exporting card as an image.
