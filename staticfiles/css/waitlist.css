@@ -35,6 +35,10 @@ html, body {
     pointer-events: none;
 }
 
+.marquee {
+    display: none;
+}
+
 main {
     height: 100%;
     color: #fff;
@@ -161,7 +165,7 @@ main h1, main p {
     bottom: 0;
     width: 100%;
     height: 30%;
-    z-index: -2;
+    z-index: -1;
     position: fixed;
     
     pointer-events: none;
@@ -178,6 +182,7 @@ main h1, main p {
 
 .page-logo {
     height: 22%;
+    z-index: 0;
     max-height: 22%;
     position: relative;
     pointer-events: none;

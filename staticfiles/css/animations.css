@@ -44,3 +44,22 @@
     }
 }
 
+@keyframes marquee-down {
+    from {
+        transform: translateY(-100%);
+    }
+    
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes marquee-up {
+    from {
+        transform: translateY(0);
+    }
+    
+    to {
+        transform: translateY(-100%);
+    }
+}

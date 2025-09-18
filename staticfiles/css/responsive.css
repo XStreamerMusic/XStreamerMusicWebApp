@@ -113,7 +113,7 @@
         align-items: flex-start;
         flex-direction: column;
     }
-
+    
     .logo {
         height: 8%;
         width: auto;
@@ -139,7 +139,7 @@
         height: 0;
         position: unset;
     }
-
+    
     .page-logo svg {
         right: -30vw;
     }
@@ -151,7 +151,11 @@
         width: auto;
         height: 8%;
     }
-
+    
+    .marquee {
+        display: unset;
+    }
+    
     main {
         align-items: center;
     }
@@ -160,7 +164,7 @@
         font-size: 2rem;
         text-align: center;
     }
-
+    
     main p {
         font-size: .8rem;
         text-align: center;
