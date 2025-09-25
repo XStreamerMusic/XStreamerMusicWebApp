@@ -88,6 +88,14 @@
         width: 25%;
         height: auto;
     }
+   
+    .marquee.second {
+        left: 1rem;
+    }
+
+    .marquee.fourth {
+        right: 1rem;
+    }
 
     #content {
         height: 60%;
@@ -105,6 +113,14 @@
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
     html, body, #content, main {
         overflow: hidden;
+    }
+    
+    .marquee.second {
+        left: 1rem;
+    }
+
+    .marquee.fourth {
+        display: none;
     }
     
     main {
@@ -151,9 +167,19 @@
         width: auto;
         height: 8%;
     }
-    
-    .marquee {
+
+    .marquee.first,
+    .marquee.third,
+    .marquee.fourth {
         display: unset;
+    }
+
+    .marquee.second {
+        left: 9rem;
+    }
+
+    .marquee.fourth {
+        right: 2rem;
     }
     
     main {
