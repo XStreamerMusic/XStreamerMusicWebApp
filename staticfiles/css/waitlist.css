@@ -35,7 +35,8 @@ html, body {
     pointer-events: none;
 }
 
-.marquee {
+.marquee.first,
+.marquee.third {
     display: none;
 }
 
