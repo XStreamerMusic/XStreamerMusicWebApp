@@ -26,4 +26,4 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('giveaways/', include('giveaways.urls')),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

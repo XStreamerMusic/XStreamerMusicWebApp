@@ -3,32 +3,20 @@ from .forms import WaitlistForm
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.middleware.csrf import get_token
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404, JsonResponse
 from datetime import datetime
 
 # Create your views here.
-
-def index(request):
-
-    context = {
-
-    }
-
-    return redirect('waitlist')
-
-
-def waitlist(request):
-
-    context = {
-        "page_title": "Join the New Wave"
-    }
-
-    return render(request, 'waitlist.html', context)
+def get_csrf_token(request):
+    token = get_token(request)  # forces Django to set the csrftoken cookie
+    return JsonResponse({'csrfToken': token})
 
 
 def join_waitlist(request):
 
+    success = True
     if request.method == "POST":
         form = WaitlistForm(request.POST)
 
@@ -40,25 +28,32 @@ def join_waitlist(request):
                 new, created = Waitlist.objects.get_or_create(email=email)
                 
                 if not created:
-                    messages.error(request, "This email is already on the waitlist")
-                    return redirect('waitlist')
+                    message = "This email is already on the waitlist"
+                    success = False
                 
-                subject = "Waitlist just got longer!"
-                message = f"There's a new member on the waitlist:\n\n{email}"
-                sender = settings.EMAIL_HOST_USER
-                recipients = ["xstreamermusic@gmail.com"]
+                else:
+                    
+                    send_mail(
+                    subject = "Waitlist just got longer!",
+                    message = f"There's a new member on the waitlist:\n\n{email}",
+                    from_email = settings.DEFAULT_FROM_EMAIL,
+                    recipient_list = ["xstreamermusic@gmail.com"])
 
-                send_mail(subject, message, sender, recipients)
-
-                messages.success(request, "You've been added to the waitlist! See you soon!")
+                    message = "You've been added to the waitlist! See you soon!"
             except Exception as e:
-                messages.error(request, e)
-            finally:
-                return redirect('waitlist')
+                message = e
+                success = False
+            # finally:
+            #     return redirect('waitlist')
 
         else:
-            messages.error(request, e)
-            return redirect('waitlist')
+            message = form.errors
+            success = False
+        
+        return JsonResponse({
+            "success": success,
+            "message": str(message)
+        })
 
 
 def ping_db(request):
