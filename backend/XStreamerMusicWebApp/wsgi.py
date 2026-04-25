@@ -18,7 +18,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'XStreamerMusicWebApp.settings')
 
 
 try:
-    django.setup()
     call_command('createadmin')
 except:
     pass  # Ignore errors if already exists
