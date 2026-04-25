@@ -17,6 +17,6 @@
     { "src": "/admin/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
     { "src": "/dashboard/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
     { "src": "/giveaways/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "src": "/(.*)", "dest": "frontend/$1" }
+    { "src": "/(.*)", "dest": "frontend/dist/$1" }
   ]
 }
