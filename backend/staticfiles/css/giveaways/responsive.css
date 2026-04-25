@@ -1,0 +1,245 @@
+@media only screen and (min-width: 720px) and (orientation: portrait) {
+    
+    .page-logo svg {
+        width: 75vw;
+        bottom: -30vh;
+    }
+    
+    main h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    #content {
+        height: 70%;
+    }
+}
+
+@media only screen and (min-width: 640px) and (orientation: landscape) {
+    
+    html {
+        height: 100dvh;
+    }
+    
+    main {
+        padding: 2rem 0;
+        padding-left: 4rem;
+        flex-direction: row;
+    }
+    
+    #content {
+        width: 75%;
+        height: 100%;
+        text-align: left;
+        visibility: visible;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    main h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    main p span {
+        display: none;
+        visibility: hidden;
+    }
+    
+    #giveaway-claim {
+        width: 80%;
+    }
+
+    .gradient-backdrop {
+        right: 0;
+        width: 30%;
+        height: 100%;
+        visibility: visible;
+        
+        mask-image: linear-gradient(to right, transparent, black);
+        -webkit-mask-image: linear-gradient(to right, transparent, black);
+    }   
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    
+    header {
+        height: 8rem;
+    }
+
+    #content {
+        height: 60%;
+    }
+    
+    #content > p {
+        font-size: 1rem;
+        margin: 2rem 0;
+        margin-bottom: 4rem;
+    }
+
+    #giveaway-claim {
+        width: 75%;
+    }
+    
+    .page-logo {
+        height: 100%;
+        display: block;
+    }
+    
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+    html, body, #content, main {
+        overflow: hidden;
+    }
+    
+    header {
+        padding-inline: 5rem;
+        justify-content: flex-start;
+    }
+
+    main {
+        padding-left: 0;
+        padding: 2rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    
+    #content {
+        width: 70%;
+        height: 80%;
+        padding-left: 3rem;
+    }
+
+    main h1 {
+        font-size: 3vw;
+    }
+
+    main h1 SPAN {
+        font-size: 5vw;
+    }
+    
+    #content > p {
+        font-size: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .page-logo{
+        height: 0;
+        position: unset;
+        display: block;
+
+        transform: translateX(50%);
+    }
+    
+    .page-logo svg {
+        right: -30vw;
+    }
+
+}
+
+@media screen and (min-width: 1366px) {
+
+    header {
+        margin: 0;
+        height: 6rem;
+        padding: 1rem 0;
+        justify-content: center;
+    }
+
+    main {
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 6rem);
+    }
+
+    main h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    main h1 span {
+        font-size: 4vw;
+    }
+
+    #content > p {
+        margin: 0;
+        font-size: .8rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    #content {
+        height: fit-content;
+        padding-left: 0;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #giveaway-claim {
+        width: 50%;
+    }
+
+    #giveaway-claim:hover {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #giveaway-claim:focus-within {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .page-logo {
+        width: 100%;
+        height: 10%;
+        position: relative;
+    }
+
+    .page-logo svg {
+        top: unset;
+        left: 50%;
+        width: 30vw;
+        right: unset;
+        height: auto;
+        bottom: -45vh;
+        transform: translateX(-50%);
+    }
+
+    .gradient-backdrop {
+        width: 100%;
+        height: 35%;
+        right: unset;
+        visibility: visible;
+
+        mask-image: linear-gradient(transparent, black);
+        -webkit-mask-image: linear-gradient(transparent, black);
+    }
+
+    .messages {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+    
+    header {
+        margin-top: 2rem;
+    }
+
+    main {
+        height: calc(100% - 10rem);
+    }
+    main h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    main p {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    #giveaway-claim {
+        transition: all .3s ease;
+    }
+}

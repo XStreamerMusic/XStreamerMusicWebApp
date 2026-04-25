@@ -4,6 +4,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('ping-db/', views.ping_db, name='ping-db'),
-    path('api/csrf', views.get_csrf_token, name='csrf'),
+    path('csrf', views.get_csrf_token, name='csrf'),
     path('join_waitlist', views.join_waitlist, name="join_waitlist"),
 ]

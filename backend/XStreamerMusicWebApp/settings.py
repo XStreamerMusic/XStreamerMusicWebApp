@@ -52,6 +52,8 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://xstreamermusic.xyz",
+    "https://www.xstreamermusic.xyz",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

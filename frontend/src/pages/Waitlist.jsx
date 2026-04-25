@@ -8,7 +8,7 @@ import Marquee from "react-fast-marquee";
 
 function Waitlist () {
 
-    document.title = "Join The New Wave | XStreamer Music"
+    document.title = "Join The New Wave - XStreamer Music"
     
     const [messages, setMessages] = useState([])
     const [waitlistEmail, setWaitlistEmail] = useState("")
@@ -20,7 +20,7 @@ function Waitlist () {
         formData.append("email", waitlistEmail);
 
         try {
-            const response = await api.post("/join_waitlist", formData);
+            const response = await api.post("/api/join_waitlist", formData);
             console.log(response);
             setMessages(prev => [...prev, response.data.message]);
             setWaitlistEmail("");
