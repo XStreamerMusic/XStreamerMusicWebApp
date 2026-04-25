@@ -16,6 +16,7 @@ import django
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'XStreamerMusicWebApp.settings')
 
+application = get_wsgi_application()
 
 try:
     call_command('createadmin')
@@ -23,6 +24,4 @@ except:
     pass  # Ignore errors if already exists
 
 # Vercel needs this
-
-application = get_wsgi_application()
 app = application

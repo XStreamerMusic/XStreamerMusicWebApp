@@ -1,14 +1,14 @@
 from .models import Waitlist
 from .forms import WaitlistForm
 from django.conf import settings
-from django.contrib import messages
 from django.core.mail import send_mail
 from django.middleware.csrf import get_token
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, Http404, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 
 # Create your views here.
+
+@csrf_exempt
 def get_csrf_token(request):
     token = get_token(request)  # forces Django to set the csrftoken cookie
     return JsonResponse({'csrfToken': token})
@@ -49,11 +49,14 @@ def join_waitlist(request):
         else:
             message = form.errors
             success = False
-        
-        return JsonResponse({
-            "success": success,
-            "message": str(message)
-        })
+    
+    else:
+        return JsonResponse({"error": "Method not allowed"}, status=405)
+    
+    return JsonResponse({
+        "success": success,
+        "message": str(message)
+    })
 
 
 def ping_db(request):

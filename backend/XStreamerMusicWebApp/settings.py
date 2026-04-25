@@ -77,7 +77,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Moved WhiteNoise higher
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -171,13 +170,7 @@ SITE_URL = "https://xstreamermusic.xyz"
 
 # Static files configuration
 STATIC_URL = '/static/'
-
-if DEBUG:
-    STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
-    ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 

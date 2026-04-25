@@ -3,14 +3,14 @@ import axios from 'axios';
 
 const api = axios.create(
     {
-        baseURL: import.meta.env.VITE_API_URL,
+        baseURL: import.meta.env.VITE_API_URL || '/',
         withCredentials: true,
     }
 )
 
 export const fetchCsrfToken = async () => {
-    const res = await api.get('/csrf')  // Django sets the csrftoken cookie in this response
-    Cookies.set('csrftoken', res.data.csrfToken);
+    const res = await api.get('/api/csrf')  // Django sets the csrftoken cookie in this response
+    // Cookies.set('csrftoken', res.data.csrfToken);
 };
 
 // check for csrf token in cookies

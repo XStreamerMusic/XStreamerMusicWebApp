@@ -5,7 +5,9 @@ import { RouterProvider } from "react-router-dom"
 
 function App() {
 
-	fetchCsrfToken()
+	useEffect(() => {
+        fetchCsrfToken()
+    }, [])
 	
     return (
 		<RouterProvider router={router}/>
