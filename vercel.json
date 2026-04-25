@@ -11,15 +11,5 @@
         "distDir": "dist"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
-    }
   ]
 }
