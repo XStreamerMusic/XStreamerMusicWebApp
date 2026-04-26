@@ -172,8 +172,6 @@ SITE_URL = "https://xstreamermusic.xyz"
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-
 # Simplified WhiteNoise configuration for Vercel
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 

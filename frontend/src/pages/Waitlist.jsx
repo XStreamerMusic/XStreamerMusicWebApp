@@ -20,7 +20,7 @@ function Waitlist () {
         formData.append("email", waitlistEmail);
 
         try {
-            const response = await api.post("/api/join_waitlist", formData);
+            const response = await api.post("/api/join_waitlist/", formData);
             console.log(response);
             setMessages(prev => [...prev, response.data.message]);
             setWaitlistEmail("");

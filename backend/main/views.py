@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.middleware.csrf import get_token
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from django.http import JsonResponse
 
 # Create your views here.
 
