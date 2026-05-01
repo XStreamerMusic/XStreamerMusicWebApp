@@ -2,34 +2,45 @@ import api from '../api/api'
 
 import { useState } from 'react';
 import '../styles/waitlist.css';
+import loader from '../assets/icons/loader.gif'
 import images from '../imports';
 import Marquee from "react-fast-marquee";
-
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Waitlist () {
 
     document.title = "Join The New Wave - XStreamer Music"
     
     const [messages, setMessages] = useState([])
+    const [sending, setSending] = useState(false)
     const [waitlistEmail, setWaitlistEmail] = useState("")
+
+
 
     const joinWaitlist = async (e) => {
         
         e.preventDefault()
-        const formData = new FormData();
-        formData.append("email", waitlistEmail);
 
-        try {
-            const response = await api.post("/api/join_waitlist/", formData);
-            console.log(response);
-            setMessages(prev => [...prev, response.data.message]);
-            setWaitlistEmail("");
-        } catch (error) {
-            console.log(error);
-            const status = error.response?.status || "Network Error";
-            setMessages(prev => [...prev, `Error: ${status}`]);
-        }
-        
+        if (!sending) {
+
+            setSending(prev => !prev)
+            
+            const formData = new FormData();
+            formData.append("email", waitlistEmail);
+            
+            try {
+                const response = await api.post("/api/join_waitlist/", formData);
+                console.log(response);
+                setMessages(prev => [...prev, response.data.message]);
+                setWaitlistEmail("");
+            } catch (error) {
+                console.log(error);
+                const status = error.response?.status || "Network Error";
+                setMessages(prev => [...prev, `Error: ${status}`]);
+            }
+            
+            setSending(prev => !prev)
+        }   
     }
 
     return (
@@ -74,7 +85,18 @@ function Waitlist () {
                     />
 
                     <button type="submit" id="waitlist-submit">
-                        <ion-icon name="arrow-forward"></ion-icon>
+
+                        {sending ?
+                            <img src={loader} alt="" className='btn-icon' />
+                            :
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        }
+                        <img
+                            src={loader}
+                            alt=""
+                            style={{ display: 'none' }}
+                            aria-hidden="true"
+                        />
                     </button>
                 </form>
 
