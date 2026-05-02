@@ -8,14 +8,25 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "src": "/admin/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "src": "/dashboard/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "src": "/dashboard/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "/frontend/index.html" }
   ]
 }
