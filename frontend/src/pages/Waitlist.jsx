@@ -49,7 +49,7 @@ function Waitlist () {
     }
 
     return (
-        <main ref={mainContainer}>
+        <main ref={mainContainer} className='waitlist'>
             <img
                 className="logo"
                 src="/brand/logo.png"

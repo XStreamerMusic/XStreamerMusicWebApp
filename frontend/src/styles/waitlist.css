@@ -8,6 +8,7 @@
 
 #root.waitlist {
     height: 100dvh;
+    overflow: hidden;
 }
 
 html {
@@ -35,13 +36,14 @@ html, body {
     display: none;
 }
 
-main {
+main.waitlist {
     height: 100%;
     color: #fff;
     display: flex;
     padding: 1rem;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 .logo {
@@ -68,7 +70,7 @@ main {
 }
 
 main h1 {
-    font-size: 6vw;
+    font-size: 14vw;
     font-weight: 500;
     white-space: nowrap;
     margin-bottom: 2rem;
@@ -161,7 +163,7 @@ main h1, main p {
     bottom: 0;
     width: 100%;
     height: 30%;
-    z-index: -1;
+    z-index: 0;
     position: fixed;
     
     pointer-events: none;
@@ -178,7 +180,7 @@ main h1, main p {
 
 .page-logo {
     height: 22%;
-    z-index: 0;
+    z-index: 1;
     max-height: 22%;
     position: relative;
     pointer-events: none;
@@ -240,8 +242,8 @@ main h1, main p {
                 visibility 1s ease;
 }
 
-@media only screen and (min-width: 720px) and (orientation: portrait) {
-    
+@media screen and (min-width: 640px) {
+
     .logo {
         width: 30%;
         height: auto;
@@ -253,29 +255,26 @@ main h1, main p {
     }
 
     main h1 {
-        font-size: 2.5rem;
+        font-size: 10vw;
         margin-bottom: 2rem;
     }
     
     #content {
         height: 70%;
     }
+
 }
 
-@media only screen and (min-width: 640px) and (orientation: landscape) {
-    
-    html {
-        height: 100dvh;
-    }
-
+@media screen and (min-width: 768px) and (orientation: landscape) {
     .logo {
-        display: none;
+        width: 20%;
     }
 
-    main {
+    main.waitlist {
         padding: 2rem 0;
         padding-left: 4rem;
-        flex-direction: row;
+        /* flex-direction: row; */
+        align-items: flex-start;
     }
     
     #content {
@@ -288,7 +287,7 @@ main h1, main p {
     }
 
     main h1 {
-        font-size: 1.6rem;
+        font-size: 6vw;
         margin-bottom: 1rem;
     }
 
@@ -325,31 +324,9 @@ main h1, main p {
     }
 }
 
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-    .logo {
-        width: 25%;
-        height: auto;
-    }
-
-    #content {
-        height: 60%;
-    }
-
-    main p {
-        margin-bottom: 3rem;
-    }
-
-    #waitlist {
-        width: 75%;
-    }
-}
-
-@media only screen and (min-width: 1024px) and (orientation: landscape) {
-    html, body, #content, main {
-        overflow: hidden;
-    }
+@media screen and (min-width: 1280px) {
     
-    main {
+    main.waitlist {
         padding-left: 0;
         padding: 2rem;
         align-items: flex-start;
@@ -369,11 +346,13 @@ main h1, main p {
     }
 
     main h1 {
-        font-size: 2.2rem;
+        text-align: left;
     }
-
-    main p span {
+    
+    main p span,
+    main p {
         display: block;
+        text-align: left;
         visibility: visible;
     }
 
@@ -383,100 +362,75 @@ main h1, main p {
     }
     
     .page-logo svg {
-        right: -30vw;
-    }
-}
-
-@media screen and (min-width: 1240px) {
-
-    .logo {
-        width: auto;
-        height: 8%;
+        right: -25vw;
     }
 
-    .marquee-container.left {
-        top: 0;
-        left: 0;
-        height: 100%;
-        position: fixed;
-    }
-    
-    main {
-        align-items: center;
-    }
-
-    main h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    main p {
-        font-size: .8rem;
-        text-align: center;
-    }
-
-    #content {
-        height: 70%;
-        padding-left: 0;
-        align-items: center;
-    }
-
-    #waitlist {
+    form#waitlist {
         width: 50%;
-    }
-
-    #waitlist:hover {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    #waitlist:focus-within {
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .page-logo {
-        width: 100%;
-        height: 10%;
-        position: relative;
-    }
-
-    .page-logo svg {
-        top: unset;
-        left: 50%;
-        width: 30vw;
-        right: unset;
-        height: auto;
-        bottom: -45vh;
-        transform: translateX(-50%);
-    }
-
-    .gradient-backdrop {
-        width: 100%;
-        height: 35%;
-        right: unset;
-        visibility: visible;
-
-        mask-image: linear-gradient(transparent, black);
-        -webkit-mask-image: linear-gradient(transparent, black);
-    }
-
-    .messages {
-        width: 20%;
     }
 }
 
 @media only screen and (min-width: 1600px) {
-    main h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+    main.waitlist {
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    main.waitlist h1 {
+        font-size: 5vw;
+        text-align: center;
     }
 
-    main p {
-        font-size: 1rem;
-        margin-bottom: 3rem;
+    main.waitlist p,
+    main.waitlist p span {
+        /* font-size: 1.4rem; */
+        text-align: center;
+    }
+    
+    #content {
+        gap: 1rem;
+        height: 70%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #waitlist {
         transition: all .3s ease;
+    }
+    
+    .page-logo {
+        height: 30%;
+        z-index: 1;
+        max-height: 30%;
+        position: relative;
+        pointer-events: none;
+    }
+
+    .page-logo svg {
+        top: 0;
+        left: 50%;
+        z-index: -1;
+        width: 70vw;
+        /* bottom: 25vh; */
+        position: absolute;
+        pointer-events: none;
+        transform: translateX(-50%);
+        animation: fadein 1.5s ease-in-out forwards;
+    }
+
+    .gradient-backdrop {
+        bottom: 0;
+        width: 100%;
+        height: 30%;
+        background: #8C52FF;
+        background: -webkit-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+        background: -moz-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+        background: linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
+        
+        mask-image: linear-gradient(transparent, black);
+        -webkit-mask-image: linear-gradient(transparent, black);
     }
 }

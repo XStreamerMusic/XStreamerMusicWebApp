@@ -21,7 +21,7 @@ function Giveaways () {
     return (
         <>
             <Nav />
-            <main ref={mainContainer}>
+            <main ref={mainContainer} className='giveaways'>
                 <header>
                     <h1 className="site-heading">Giveaways</h1>
                     <div className="promo-section">
@@ -34,7 +34,7 @@ function Giveaways () {
                             <img src={spotifyCard} alt="Spotify Premium gift card" />
                         </div>
                         <p className="site-p">
-                            Spotify Premium<br />
+                            Spotify Premium - 
                             1 Month
                         </p>
                     </Link>
@@ -44,7 +44,7 @@ function Giveaways () {
                             <img src={appleCard} alt="Apple Music gift card" />
                         </div>
                         <p className="site-p">
-                            Apple Music<br />
+                            Apple Music - 
                             1 Month
                         </p>
                     </Link>
@@ -54,7 +54,7 @@ function Giveaways () {
                             <img src={googleCard} alt="YouTube Music gift card" />
                         </div>
                         <p className="site-p">
-                            YouTube Music<br />
+                            YouTube Music - 
                             1 Month
                         </p>
                     </Link>

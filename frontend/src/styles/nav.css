@@ -89,60 +89,10 @@ nav {
         height: auto;
     }
 
-    #content {
-        height: 60%;
-    }
-
-    main p {
-        margin-bottom: 3rem;
-    }
-
-    #waitlist {
-        width: 75%;
-    }
 }
 
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
-    html, body, #content, main {
-        overflow: hidden;
-    }
-    
-    main {
-        padding-left: 0;
-        padding: 2rem;
-        align-items: flex-start;
-        flex-direction: column;
-    }
-    
-    .logo {
-        height: 8%;
-        width: auto;
-        display: flex;
-    }
 
-    #content {
-        width: 70%;
-        height: 80%;
-        padding-left: 3rem;
-    }
-
-    main h1 {
-        font-size: 2.2rem;
-    }
-
-    main p span {
-        display: block;
-        visibility: visible;
-    }
-
-    .page-logo{
-        height: 0;
-        position: unset;
-    }
-    
-    .page-logo svg {
-        right: -30vw;
-    }
 }
 
 @media screen and (min-width: 1240px) {
@@ -152,89 +102,8 @@ nav {
         height: 8%;
     }
 
-    .marquee-container.left {
-        top: 0;
-        left: 0;
-        height: 100%;
-        position: fixed;
-    }
-    
-    main {
-        align-items: center;
-    }
-
-    main h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    main p {
-        font-size: .8rem;
-        text-align: center;
-    }
-
-    #content {
-        height: 70%;
-        padding-left: 0;
-        align-items: center;
-    }
-
-    #waitlist {
-        width: 50%;
-    }
-
-    #waitlist:hover {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    #waitlist:focus-within {
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .page-logo {
-        width: 100%;
-        height: 10%;
-        position: relative;
-    }
-
-    .page-logo svg {
-        top: unset;
-        left: 50%;
-        width: 30vw;
-        right: unset;
-        height: auto;
-        bottom: -45vh;
-        transform: translateX(-50%);
-    }
-
-    .gradient-backdrop {
-        width: 100%;
-        height: 35%;
-        right: unset;
-        visibility: visible;
-
-        mask-image: linear-gradient(transparent, black);
-        -webkit-mask-image: linear-gradient(transparent, black);
-    }
-
-    .messages {
-        width: 20%;
-    }
 }
 
 @media only screen and (min-width: 1600px) {
-    main h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-    }
 
-    main p {
-        font-size: 1rem;
-        margin-bottom: 3rem;
-    }
-
-    #waitlist {
-        transition: all .3s ease;
-    }
 }
