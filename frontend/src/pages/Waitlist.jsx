@@ -1,6 +1,6 @@
 import api from '../api/api'
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import '../styles/waitlist.css';
 import loader from '../assets/icons/loader.gif'
 import images from '../imports';
@@ -15,7 +15,12 @@ function Waitlist () {
     const [sending, setSending] = useState(false)
     const [waitlistEmail, setWaitlistEmail] = useState("")
 
-
+    const mainContainer = useRef()
+    
+        useEffect(() => {
+            const rootElement = mainContainer.current.parentElement
+            rootElement.classList.add('waitlist')
+        }, [])
 
     const joinWaitlist = async (e) => {
         
@@ -44,7 +49,7 @@ function Waitlist () {
     }
 
     return (
-        <main>
+        <main ref={mainContainer}>
             <img
                 className="logo"
                 src="/brand/logo.png"

@@ -1,10 +1,24 @@
 import '../styles/nav.css'
 
+import { useRef, useState } from 'react';
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-
+import { IoIosCloseCircle } from "react-icons/io";
 import { NavLink, Link} from 'react-router-dom'
 
 function Nav () {
+
+    const mobileNav = useRef()
+    const [navToggled, setNavToggled] = useState(false)
+    
+    const toggleNav = () => {
+        if (!navToggled) {
+            mobileNav.current.classList.add('toggled')
+            setNavToggled(prev => !prev)
+        } else {
+            mobileNav.current.classList.remove('toggled')
+            setNavToggled(prev => !prev)
+        }
+    }
 
     return (
         <nav>
@@ -19,10 +33,30 @@ function Nav () {
                 {/* responsive */}
                 <button
                     type="button"
+                    onClick={toggleNav}
                     className='nav-toggle'
                 >
                     <HiOutlineMenuAlt3 />
                 </button>
+            </div>
+            <div id="mobile-nav" ref={mobileNav}>
+                <div className="header">
+                    <NavLink className='nav-logo' to='/'>
+                        <img
+                            src="/brand/logo.png"
+                            alt="XStreamer Music official logo - white against transparent background"
+                        />
+                    </NavLink>
+
+                    {/* responsive */}
+                    <button
+                        type="button"
+                        onClick={toggleNav}
+                        className='nav-toggle'
+                    >
+                        <IoIosCloseCircle />
+                    </button>
+                </div>
             </div>
         </nav>
     )
