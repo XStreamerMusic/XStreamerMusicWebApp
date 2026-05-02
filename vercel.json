@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
     {
@@ -13,22 +14,22 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+      "source": "/api/:path*",
+      "destination": "/backend/XStreamerMusicWebApp/wsgi.py"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+      "source": "/admin/:path*",
+      "destination": "/backend/XStreamerMusicWebApp/wsgi.py"
     },
     {
-      "src": "/dashboard/(.*)",
-      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+      "source": "/dashboard/:path*",
+      "destination": "/backend/XStreamerMusicWebApp/wsgi.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "source": "/:path*",
+      "destination": "/frontend/dist/index.html"
     }
   ]
 }
