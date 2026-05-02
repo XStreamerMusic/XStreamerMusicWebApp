@@ -29,7 +29,7 @@ function Giveaways () {
                     </div>
                 </header>
                 <div className="prize-grid">
-                    <Link className="prize-card">
+                    <div className="prize-card">
                         <div className="prize-img">
                             <img src={spotifyCard} alt="Spotify Premium gift card" />
                         </div>
@@ -37,9 +37,9 @@ function Giveaways () {
                             Spotify Premium - 
                             1 Month
                         </p>
-                    </Link>
+                    </div>
 
-                    <Link className="prize-card">
+                    <div className="prize-card">
                         <div className="prize-img">
                             <img src={appleCard} alt="Apple Music gift card" />
                         </div>
@@ -47,9 +47,9 @@ function Giveaways () {
                             Apple Music - 
                             1 Month
                         </p>
-                    </Link>
+                    </div>
 
-                    <Link className="prize-card">
+                    <div className="prize-card">
                         <div className="prize-img">
                             <img src={googleCard} alt="YouTube Music gift card" />
                         </div>
@@ -57,7 +57,7 @@ function Giveaways () {
                             YouTube Music - 
                             1 Month
                         </p>
-                    </Link>
+                    </div>
                 </div>
             </main>
         </>
