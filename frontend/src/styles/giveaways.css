@@ -49,11 +49,20 @@ header .site-heading {
 .prize-grid .prize-card {
     gap: 1rem;
     display: flex;
+    padding: 1rem .5rem;
     text-align: center;
+    height: fit-content;
     flex-direction: column;
     /* background-color: ; */
     text-decoration: none;
-    /* background-color: red; */
+    
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .prize-grid .prize-card:hover {
@@ -61,16 +70,27 @@ header .site-heading {
 }
 
 .prize-card .site-p {
+    margin: 0;
     font-size: 2rem;
     color: #ffffff;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-transform: none;
     font-family: 'Karantina';
 }
 
+.prize-card .site-p span {
+    display: block;
+    font-size: .9rem;
+    color: #ffffff50;
+    margin: .5rem 0;
+    /* font-family: 'Inter'; */
+}
+
 .prize-card .prize-img {
     width: 100%;
-    max-height: 12rem;
+    height: 12rem;
     background: url('../../public/brand/color-logo.svg') center no-repeat;
     background-size: contain;
 }
@@ -86,31 +106,58 @@ header .site-heading {
     animation-duration: 2s
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 720px) {
+    
+    main.giveaways {
+        padding: 1rem;
+    }
+
+    main.giveaways header {
+        margin: 0;
+    }
+
+    main.giveaways .site-heading {
+        font-size: 12vw;
+    }
 
     .prize-grid {
+        gap: .5rem;
         grid-template-columns: repeat(3, 1fr);
     }
-    
-    main {
-        padding: 1rem !important;
+
+    .prize-grid .prize-card {
+        gap: 2rem;
     }
 
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
+    
+    main.giveaways .site-heading {
+        font-size: 6vw;
+    }
+
     .promo-section {
         width: 70%;
         margin: 0 auto;
+    }
+
+    .prize-grid {
+        gap: 1rem;
+        padding: 0 2rem;
     }
 }
 
 @media screen and (min-width: 1280px) {
     
     main.giveaways {
-        gap: 8rem;
+        gap: 4rem;
         padding: 0;
-        margin: 0 10rem;
+        margin: 0 8rem;
+    }
+
+    main.giveaways .site-heading {
+        font-size: 5vw;
     }
 
     .promo-section {

@@ -36,6 +36,7 @@ function Giveaways () {
                         <p className="site-p">
                             Spotify Premium - 
                             1 Month
+                            <span>Ends in 3 Days</span>
                         </p>
                     </div>
 
@@ -46,6 +47,7 @@ function Giveaways () {
                         <p className="site-p">
                             Apple Music - 
                             1 Month
+                            <span>Ends in 3 Days</span>
                         </p>
                     </div>
 
@@ -56,10 +58,13 @@ function Giveaways () {
                         <p className="site-p">
                             YouTube Music - 
                             1 Month
+                            <span>Ends in 3 Days</span>
                         </p>
                     </div>
                 </div>
+            
             </main>
+
         </>
     )
 }

@@ -97,6 +97,10 @@ nav {
 
 @media screen and (min-width: 1240px) {
 
+    nav {
+        height: 5rem;
+    }
+
     .logo {
         width: auto;
         height: 8%;
@@ -105,5 +109,7 @@ nav {
 }
 
 @media only screen and (min-width: 1600px) {
-
+    nav {
+        height: 8rem;
+    }
 }
