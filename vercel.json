@@ -28,7 +28,7 @@
     },
     {
       "src": "/giveaways/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
     },
     {
       "src": "/(.*)",
