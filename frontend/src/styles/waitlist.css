@@ -327,8 +327,7 @@ main h1, main p {
 @media screen and (min-width: 1280px) {
     
     main.waitlist {
-        padding-left: 0;
-        padding: 2rem;
+        padding: 0 2rem;
         align-items: flex-start;
         flex-direction: column;
     }
@@ -345,12 +344,12 @@ main h1, main p {
         padding-left: 3rem;
     }
 
-    main h1 {
+    main.waitlist h1 {
         text-align: left;
     }
     
-    main p span,
-    main p {
+    main.waitlist p span,
+    main.waitlist p {
         display: block;
         text-align: left;
         visibility: visible;

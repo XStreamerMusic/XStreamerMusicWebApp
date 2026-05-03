@@ -25,12 +25,10 @@
     {
       "src": "/dashboard/(.*)",
       "dest": "backend/XStreamerMusicWebApp/wsgi.py"
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "frontend/index.html"
+      "src": "/(.*)",
+      "dest": "frontend/$1"
     }
   ]
 }

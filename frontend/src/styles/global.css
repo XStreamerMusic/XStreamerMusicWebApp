@@ -10,3 +10,9 @@
 .site-heading {
     font-family: 'Karantina';
 }
+
+.site-link {
+    cursor: pointer;
+    height: fit-content;
+    text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import api from '../api/api'
+import Nav from '../components/Nav';
 
 import { useState, useRef, useEffect } from 'react';
 import '../styles/waitlist.css';
@@ -50,11 +51,7 @@ function Waitlist () {
 
     return (
         <main ref={mainContainer} className='waitlist'>
-            <img
-                className="logo"
-                src="/brand/logo.png"
-                alt="XStreamer Music official logo - white against transparent background"
-            />
+            <Nav />
 
             <section id="content">
                 <h1>

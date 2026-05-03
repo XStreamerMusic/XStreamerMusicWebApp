@@ -30,6 +30,15 @@ function Nav () {
                     />
                 </NavLink>
 
+                <ul className='nav-list'>
+                    <NavLink className='site-link' to='/waitlist'>
+                        Join Our Waitlist
+                    </NavLink>
+                    <NavLink className='site-link' to='/giveaways'>
+                        Giveaways
+                    </NavLink>
+                </ul>
+
                 {/* responsive */}
                 <button
                     type="button"
