@@ -66,6 +66,14 @@ function Nav () {
                         <IoIosCloseCircle />
                     </button>
                 </div>
+                <ul className="nav-list mobile">
+                    <NavLink className='site-link' to='/waitlist'>
+                        Join Our Waitlist
+                    </NavLink>
+                    <NavLink className='site-link' to='/giveaways'>
+                        Giveaways
+                    </NavLink>
+                </ul>
             </div>
         </nav>
     )
