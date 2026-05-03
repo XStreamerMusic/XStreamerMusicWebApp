@@ -26,10 +26,9 @@
       "src": "/dashboard/(.*)",
       "dest": "backend/XStreamerMusicWebApp/wsgi.py"
     },
-    { "handle": "filesystem" },
     {
       "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "dest": "frontend/$1"
     }
   ]
 }
