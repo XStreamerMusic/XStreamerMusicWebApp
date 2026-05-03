@@ -21,8 +21,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('api/', include('main.urls')),
     path('api/giveaways/', include('giveaways.urls')),
+    path('api/', include('main.urls')),
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
 

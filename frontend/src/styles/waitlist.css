@@ -69,7 +69,7 @@ main.waitlist {
     display: none;
 }
 
-main h1 {
+main.waitlist h1 {
     font-size: 14vw;
     font-weight: 500;
     white-space: nowrap;
@@ -80,7 +80,7 @@ main h1 {
     
 }
 
-main h1 span {
+main.waitlist h1 span {
     font-family: inherit;
 
     background: #8C52FF;
