@@ -1,20 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "backend/XStreamerMusicWebApp/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "backend/XStreamerMusicWebApp/wsgi.py"
-    },
-    {
-      "source": "/admin/:path*",
-      "destination": "backend/XStreamerMusicWebApp/wsgi.py"
-    },
+    { "source": "/api/(.*)", "destination": "backend/XStreamerMusicWebApp/wsgi.py" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
