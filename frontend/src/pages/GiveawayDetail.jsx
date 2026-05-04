@@ -35,15 +35,16 @@ function GiveawayDetail() {
                     <img src='/promo/giveaways.jpg' alt="" />
                 </div>
             </header>
-
-            {/* <iframe
-                src={giveaway.src}
-                width="100%"
-                height="650"
-                frameBorder="0"
-                scrolling="no"
-                title={giveaway.title}
-            /> */}
+            <div className="gleam-wrapper">
+                <iframe
+                    src={giveaway.src}
+                    width="100%"
+                    height="650"
+                    frameBorder="0"
+                    scrolling="no"
+                    title={giveaway.title}
+                />
+            </div>
         </main>
     )
 }
