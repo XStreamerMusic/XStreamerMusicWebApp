@@ -4,14 +4,28 @@
     {
       "src": "backend/XStreamerMusicWebApp/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
-  "outputDirectory": "frontend/dist",
   "routes": [
-    { "src": "/api/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "src": "/admin/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "src": "/dashboard/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "src": "/dashboard/(.*)",
+      "dest": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    { "src": "/(.*)", "dest": "frontend/$1" }
   ]
 }
