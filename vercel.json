@@ -1,6 +1,13 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "backend/XStreamerMusicWebApp/wsgi.py" },
+    {
+      "source": "/api/:path*",
+      "destination": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "backend/XStreamerMusicWebApp/wsgi.py"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
