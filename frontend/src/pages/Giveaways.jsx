@@ -1,4 +1,5 @@
 import '../styles/giveaways.css'
+import { giveaways } from '../data/GiveawaysData'
 import { useEffect, useRef } from 'react';
 import Nav from "../components/Nav";
 
@@ -29,7 +30,7 @@ function Giveaways () {
                     </div>
                 </header>
                 <div className="prize-grid">
-                    <Link className="prize-card">
+                    <Link className="prize-card" to="/giveaways/spotify-premium">
                         <div className="prize-img">
                             <img src={spotifyCard} alt="Spotify Premium gift card" />
                         </div>
@@ -40,7 +41,7 @@ function Giveaways () {
                         </p>
                     </Link>
 
-                    <Link className="prize-card">
+                    <Link className="prize-card" to="/giveaways/apple-music">
                         <div className="prize-img">
                             <img src={appleCard} alt="Apple Music gift card" />
                         </div>
@@ -51,7 +52,7 @@ function Giveaways () {
                         </p>
                     </Link>
 
-                    <Link className="prize-card">
+                    <Link className="prize-card" to="/giveaways/youtube-music">
                         <div className="prize-img">
                             <img src={googleCard} alt="YouTube Music gift card" />
                         </div>

@@ -4,7 +4,6 @@ import Nav from '../components/Nav';
 import { useState, useRef, useEffect } from 'react';
 import '../styles/waitlist.css';
 import loader from '../assets/icons/loader.gif'
-import images from '../imports';
 import Marquee from "react-fast-marquee";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 

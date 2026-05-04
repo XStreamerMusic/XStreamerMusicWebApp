@@ -13,16 +13,16 @@ main.giveaways {
     flex-direction: column;
 }
 
-header {
+.giveaways header {
     gap: 2rem;
     width: 100%;
     display: flex;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     flex-direction: column;
     justify-content: center;
 }
 
-header .site-heading {
+.giveaways header .site-heading {
     margin: 0;
     font-size: 4rem;
     color: #ffffff;
@@ -120,7 +120,7 @@ header .site-heading {
         font-size: 12vw;
     }
 
-    .prize-grid {
+    main.giveaways .prize-grid {
         gap: .5rem;
         grid-template-columns: repeat(3, 1fr);
     }
