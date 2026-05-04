@@ -1,4 +1,9 @@
 {
+  "routes": [
+    { "src": "/api/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
+    { "src": "/admin/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
+    { "src": "/dashboard/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "backend/XStreamerMusicWebApp/wsgi.py" },
     { "source": "/(.*)", "destination": "/index.html" }
