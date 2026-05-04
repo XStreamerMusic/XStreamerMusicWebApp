@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karantina:wght@300;400;700&display=swap');
 
 #root {
-  background-color: #111111;
-  background-image: 
-    radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-  background-size: 28px 28px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #111111;
+    background-image: 
+      radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 28px 28px;
 }
 
 .site-heading {

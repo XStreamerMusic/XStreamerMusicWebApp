@@ -20,9 +20,9 @@ function Giveaways () {
 
     return (
         <>
-            <Nav />
             <main ref={mainContainer} className='giveaways'>
                 <header>
+                    <Nav />
                     <h1 className="site-heading">Giveaways</h1>
                     <div className="promo-section">
                         <img src='/promo/giveaways.jpg' alt="" />
@@ -36,7 +36,7 @@ function Giveaways () {
                         <p className="site-p">
                             Spotify Premium - 
                             1 Month
-                            <span>Ends in 3 Days</span>
+                            <span>Ends on 10 May, 16:00</span>
                         </p>
                     </Link>
 
@@ -47,7 +47,7 @@ function Giveaways () {
                         <p className="site-p">
                             Apple Music - 
                             1 Month
-                            <span>Ends in 3 Days</span>
+                            <span>Ends on 10 May, 16:00</span>
                         </p>
                     </Link>
 
@@ -58,7 +58,7 @@ function Giveaways () {
                         <p className="site-p">
                             YouTube Music - 
                             1 Month
-                            <span>Ends in 3 Days</span>
+                            <span>Ends on 10 May, 16:00</span>
                         </p>
                     </Link>
                 </div>
