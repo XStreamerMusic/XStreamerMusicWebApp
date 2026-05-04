@@ -10,7 +10,7 @@ const api = axios.create(
 
 export const fetchCsrfToken = async () => {
     const res = await api.get('/api/csrf/')  // Django sets the csrftoken cookie in this response
-    Cookies.set('csrftoken', res.data.csrfToken);
+    // Cookies.set('csrftoken', res.data.csrfToken);
 };
 
 // check for csrf token in cookies
