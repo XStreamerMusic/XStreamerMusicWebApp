@@ -1,4 +1,10 @@
 {
+  "builds": [
+    {
+      "src": "backend/XStreamerMusicWebApp/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
     { "src": "/api/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
     { "src": "/admin/(.*)", "dest": "backend/XStreamerMusicWebApp/wsgi.py" },
