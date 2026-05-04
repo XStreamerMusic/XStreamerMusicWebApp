@@ -1,0 +1,56 @@
+    .logo {
+        width: 20%;
+    }
+
+    main.waitlist {
+        padding: 2rem 0;
+        padding-left: 4rem;
+        /* flex-direction: row; */
+        align-items: flex-start;
+    }
+    
+    #content {
+        width: 75%;
+        height: 100%;
+        text-align: left;
+        visibility: visible;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    main.waitlist h1 {
+        font-size: 6vw;
+        margin-bottom: 1rem;
+    }
+
+    main.waitlist p span {
+        display: none;
+        visibility: hidden;
+    }
+
+    #waitlist {
+        width: 80%;
+    }
+
+    .gradient-backdrop {
+        right: 0;
+        width: 30%;
+        height: 100%;
+        visibility: visible;
+
+        mask-image: linear-gradient(to right, transparent, black);
+        -webkit-mask-image: linear-gradient(to right, transparent, black);
+    }
+
+    .page-logo {
+        height: 100%;
+    }
+
+    .page-logo svg {
+        width: auto;
+        height: 100dvh;
+
+        top: 50%;
+        left: unset;
+        transform: translateY(-55%);
+    }

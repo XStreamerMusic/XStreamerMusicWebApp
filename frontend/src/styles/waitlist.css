@@ -11,65 +11,19 @@
     overflow: hidden;
 }
 
-html {
-    background: #000;
-}
-
-html, body {
-    padding-top: env(safe-area-inset-top);
-}
-
-.noise-background {
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: .3;
-    z-index: -1;
-    height: 100%;
-    position: fixed;
-    object-fit: cover;
-    pointer-events: none;
-}
-
-.marquee.first,
-.marquee.third {
-    display: none;
-}
-
 main.waitlist {
-    height: 100%;
+    height: 70%;
     color: #fff;
     display: flex;
     padding: 1rem;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-
-.logo {
-    width: auto;
-    height: 8%;
-    /* margin-bottom: 2rem; */
-    /* max-width: 200px;
-    max-height: 200px; */
-    
-    animation: logorise 1.5s ease-in-out forwards;
-}
-
-#content {
-    height: 70%;
-    display: flex;
     text-align: center;
     align-items: center;
+    position: relative;
     flex-direction: column;
     justify-content: center;
 }
 
-.responsive-logo {
-    display: none;
-}
-
-main.waitlist h1 {
+main.waitlist .site-heading {
     font-size: 14vw;
     font-weight: 500;
     white-space: nowrap;
@@ -80,7 +34,7 @@ main.waitlist h1 {
     
 }
 
-main.waitlist h1 span {
+main.waitlist .site-heading span {
     font-family: inherit;
 
     background: #8C52FF;
@@ -93,14 +47,10 @@ main.waitlist h1 span {
     -webkit-text-fill-color: transparent;
 }
 
-main p {
+main.waitlist .site-p {
     /* width: 100%; */
     font-weight: 400;
     margin-bottom: 2rem;
-}
-
-main h1, main p {
-    animation: fadenrise 1.5s ease-in-out forwards;
 }
 
 #waitlist {
@@ -178,24 +128,22 @@ main h1, main p {
     animation: fadein 5s ease-in-out forwards;
 }
 
-.page-logo {
-    height: 22%;
-    z-index: 1;
-    max-height: 22%;
-    position: relative;
+main.waitlist .page-logo {
+    z-index: -1;
+    bottom: -80%;
+    width: 100%;
+    position: absolute;
     pointer-events: none;
 }
 
-.page-logo svg {
-    top: 0;
-    left: 50%;
-    z-index: -1;
-    width: 90vw;
-    /* bottom: -25vh; */
-    position: absolute;
+main.waitlist .page-logo svg {
+    /* top: 5rem;
+    left: 50%; */
+    width: 100%;
+    /* position: absolute;
     pointer-events: none;
     transform: translateX(-50%);
-    animation: fadein 1.5s ease-in-out forwards;
+    animation: fadein 1.5s ease-in-out forwards; */
 }
 
 .messages {
@@ -244,128 +192,87 @@ main h1, main p {
 
 @media screen and (min-width: 640px) {
 
-    .logo {
-        width: 30%;
-        height: auto;
+    main.waitlist .page-logo {
+        top: 90%;
+        width: 80%;
+        bottom: unset;
     }
 
-    .page-logo svg {
-        width: 75vw;
-        bottom: -30vh;
-    }
-
-    main h1 {
-        font-size: 10vw;
+    main.waitlist .site-heading {
+        font-size: 12vw;
         margin-bottom: 2rem;
     }
     
-    #content {
-        height: 70%;
+    #waitlist {
+        width: 75%
     }
 
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
-    .logo {
-        width: 20%;
-    }
-
-    main.waitlist {
-        padding: 2rem 0;
-        padding-left: 4rem;
-        /* flex-direction: row; */
-        align-items: flex-start;
+    
+    
+    main.waitlist nav {
+        height: 6rem;
     }
     
-    #content {
-        width: 75%;
-        height: 100%;
-        text-align: left;
-        visibility: visible;
-        align-items: flex-start;
-        justify-content: center;
+    nav .site-link {
+        font-size: .8rem;
     }
 
-    main.waitlist h1 {
-        font-size: 6vw;
-        margin-bottom: 1rem;
+    main.waitlist .site-heading {
+        font-size: 8vw;
     }
-
-    main.waitlist p span {
-        display: none;
-        visibility: hidden;
+        
+    main.waitlist .site-p span,
+    main.waitlist .site-p {
+        font-size: .8rem;
     }
-
+    
+    main.waitlist .page-logo {
+        top: 60%;
+        width: 50vw;
+    }
+    
+    main.waitlist .page-logo svg {
+        opacity: .2;
+    }
+    
     #waitlist {
-        width: 80%;
-    }
-
-    .gradient-backdrop {
-        right: 0;
-        width: 30%;
-        height: 100%;
-        visibility: visible;
-
-        mask-image: linear-gradient(to right, transparent, black);
-        -webkit-mask-image: linear-gradient(to right, transparent, black);
-    }
-
-    .page-logo {
-        height: 100%;
-    }
-
-    .page-logo svg {
-        width: auto;
-        height: 100dvh;
-
-        top: 50%;
-        left: unset;
-        transform: translateY(-55%);
+        width: 50%;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    
     main.waitlist {
-        padding: 0;
-        align-items: flex-start;
-        flex-direction: column;
+        height: 60%;
+        /* justify-content: flex-start; */
+    }
+
+    main.waitlist nav {
+        height: 8rem;
     }
     
-    .logo {
-        height: 8%;
-        width: auto;
-        display: flex;
-    }
-
-    #content {
-        width: 70%;
-        height: 80%;
-        padding-left: 3rem;
-    }
-
-    main.waitlist h1 {
-        text-align: left;
+    nav .site-link {
+        font-size: .9rem;
     }
     
-    main.waitlist p span,
-    main.waitlist p {
-        display: block;
-        text-align: left;
-        visibility: visible;
+    main.waitlist .site-heading {
+        font-size: 5vw;
     }
 
-    .page-logo{
-        height: 0;
-        position: unset;
-    }
-    
-    .page-logo svg {
-        right: -25vw;
+    main.waitlist .site-p span,
+    main.waitlist .site-p {
+        font-size: .7rem;
     }
 
-    form#waitlist {
-        width: 50%;
+    #waitlist {
+        width: 40%;
+    }
+
+    main.waitlist .page-logo {
+        width: 60%;
+        /* top: 90%; */
     }
 }
 
@@ -375,33 +282,24 @@ main h1, main p {
         flex-direction: column;
     }
     
-    main.waitlist h1 {
-        font-size: 5vw;
+    main.waitlist .site-heading {
+        font-size: 6vw;
         text-align: center;
     }
 
-    main.waitlist p,
-    main.waitlist p span {
-        /* font-size: 1.4rem; */
+    main.waitlist .site-p,
+    main.waitlist .site-p span {
+        font-size: 1rem;
         text-align: center;
-    }
-    
-    #content {
-        gap: 1rem;
-        height: 70%;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
     }
 
     #waitlist {
-        transition: all .3s ease;
+        width: 30%;
+        margin-top: 1rem;
     }
     
     .page-logo {
-        height: 30%;
+        height: 40%;
         z-index: 1;
         max-height: 30%;
         position: relative;
@@ -412,8 +310,7 @@ main h1, main p {
         top: 0;
         left: 50%;
         z-index: -1;
-        width: 70vw;
-        /* bottom: 25vh; */
+        width: 40vw;
         position: absolute;
         pointer-events: none;
         transform: translateX(-50%);
