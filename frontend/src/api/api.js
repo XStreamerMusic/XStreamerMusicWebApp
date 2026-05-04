@@ -14,18 +14,20 @@ export const fetchCsrfToken = async () => {
 };
 
 // check for csrf token in cookies
-api.interceptors.request.use(
-    (config) => {
-        const csrfToken = Cookies.get('csrftoken');
+api.interceptors.request.use((config) => {
+    const csrfToken = Cookies.get('csrftoken');
 
-        if (csrfToken) {
-            config.headers["X-CSRFToken"] = csrfToken;
-        }
+    // only attach for unsafe methods
+    if (
+        csrfToken &&
+        csrfToken !== "undefined" &&
+        ["post", "put", "patch", "delete"].includes(config.method)
+    ) {
+        config.headers["X-CSRFToken"] = csrfToken;
+    }
 
-        return config;
-    },
-    (error) => Promise.reject(error)
-);
+    return config;
+});
 
 api.interceptors.response.use(
     (response) => response,
