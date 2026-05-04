@@ -1,5 +1,5 @@
 import '../styles/giveaways.css'
-import { giveaways } from '../data/GiveawaysData'
+import { giveaways } from '../data/giveawaysData'
 import { useEffect, useRef } from 'react';
 import Nav from "../components/Nav";
 

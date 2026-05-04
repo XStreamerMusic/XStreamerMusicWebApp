@@ -1,4 +1,3 @@
-// giveawaysData.js
 export const giveaways = [
     {
         slug: "spotify-premium",
