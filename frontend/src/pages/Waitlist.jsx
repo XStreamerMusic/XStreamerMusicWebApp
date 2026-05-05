@@ -8,11 +8,6 @@ import Marquee from "react-fast-marquee";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Waitlist () {
-
-    <Helmet>
-        <title>"Join The New Wave - XStreamer Music"</title>
-        <meta name="description" content="South African music is booming, and the beat is about to DROP. Join our waitlist, and we'll notify you when the site is up and running" />
-    </Helmet>
     
     const [messages, setMessages] = useState([])
     const [sending, setSending] = useState(false)
@@ -63,6 +58,10 @@ function Waitlist () {
 
     return (
         <>
+            <Helmet>
+                <title>"Join The New Wave - XStreamer Music"</title>
+                <meta name="description" content="South African music is booming, and the beat is about to DROP. Join our waitlist, and we'll notify you when the site is up and running" />
+            </Helmet>
             <Nav />
             <main ref={mainContainer} className='waitlist'>
                 <h1 className='site-heading'>
