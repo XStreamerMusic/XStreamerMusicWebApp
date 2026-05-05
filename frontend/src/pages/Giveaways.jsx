@@ -22,7 +22,7 @@ function Giveaways () {
     return (
         <>
             <Helmet>
-                <title>"Giveaways - XStreamer Music"</title>
+                <title>Giveaways - XStreamer Music</title>
                 <meta name="description" content="We've got so much love to give, so we're giving it away for FREE, every month to the most loyal fans. Win free Giveaway prizes every month on XStreamer Music" />
             </Helmet>
             <main ref={mainContainer} className='giveaways'>

@@ -60,7 +60,7 @@ function Waitlist () {
     return (
         <>
             <Helmet>
-                <title>"Join The New Wave - XStreamer Music"</title>
+                <title>Join The New Wave - XStreamer Music</title>
                 <meta name="description" content="South African music is booming, and the beat is about to DROP. Join our waitlist, and we'll notify you when the site is up and running" />
             </Helmet>
             <Nav />
