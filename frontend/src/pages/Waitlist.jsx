@@ -14,13 +14,23 @@ function Waitlist () {
     const [messages, setMessages] = useState([])
     const [sending, setSending] = useState(false)
     const [waitlistEmail, setWaitlistEmail] = useState("")
-
-    const mainContainer = useRef()
     
-        useEffect(() => {
-            const rootElement = mainContainer.current.parentElement
-            rootElement.classList.add('waitlist')
-        }, [])
+    const mainContainer = useRef()
+    const messageElement = useRef()
+    
+    useEffect(() => {
+        if (messages) {
+            messageElement.current.classList.toggle('invisible')
+            setTimeout(() => {
+                messageElement.current.classList.toggle('invisible')
+            }, 5000)
+        }
+    }, [messages])
+    
+    useEffect(() => {
+        const rootElement = mainContainer.current.parentElement
+        rootElement.classList.add('waitlist')
+    }, [])
 
     const joinWaitlist = async (e) => {
         
@@ -53,7 +63,7 @@ function Waitlist () {
             <Nav />
             <main ref={mainContainer} className='waitlist'>
                 <h1 className='site-heading'>
-                    Something Big Is Coming<br />
+                    The Drop Is Here<br />
                     <span>Join The New Wave</span>
                 </h1>
 
@@ -100,20 +110,6 @@ function Waitlist () {
                     </button>
                 </form>
 
-                {/* Messages block */}
-                {/* You’ll need to pass messages as props/state in React */}
-                {/* Example: {messages && (...)} */}
-
-                {messages.length > 0 && 
-                    <ul className="messages" id="messages">
-                        <ion-icon className="main-icon" name="notifications"></ion-icon>
-                        {messages.map((message, i) => (
-                            <li key={i}>{message}</li>
-                        ))}
-                    
-                    </ul>
-                }
-
                 <div className="page-logo">
                     <svg
                         viewBox="0 0 567 572"
@@ -158,6 +154,13 @@ function Waitlist () {
                 <div className="gradient-backdrop"></div>
 
             </main>
+            <ul className="messages invisible" ref={messageElement}>
+                <ion-icon className="main-icon" name="notifications"></ion-icon>
+                {messages.map((message, i) => (
+                    <li key={i}>{message}</li>
+                ))}
+            
+            </ul>
         </>
     )
 }
