@@ -9,7 +9,10 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Waitlist () {
 
-    document.title = "Join The New Wave - XStreamer Music"
+    <Helmet>
+        <title>"Join The New Wave - XStreamer Music"</title>
+        <meta name="description" content="South African music is booming, and the beat is about to DROP. Join our waitlist, and we'll notify you when the site is up and running" />
+    </Helmet>
     
     const [messages, setMessages] = useState([])
     const [sending, setSending] = useState(false)

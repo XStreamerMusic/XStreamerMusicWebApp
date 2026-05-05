@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Nav from "../components/Nav";
 
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";    
 
 import spotifyCard from '../assets/giveaways/spotify-gift-card.png'
 import appleCard from '../assets/giveaways/apple-gift-card.png'
@@ -11,7 +12,6 @@ import googleCard from '../assets/giveaways/google-gift-card.png'
 
 function Giveaways () {
 
-    document.title = "Giveaways - XStreamer Music"
     const mainContainer = useRef()
 
     useEffect(() => {
@@ -21,6 +21,10 @@ function Giveaways () {
 
     return (
         <>
+            <Helmet>
+                <title>"Giveaways - XStreamer Music"</title>
+                <meta name="description" content="We've got so much love to give, so we're giving it away for FREE, every month to the most loyal fans. Win free Giveaway prizes every month on XStreamer Music" />
+            </Helmet>
             <main ref={mainContainer} className='giveaways'>
                 <header>
                     <Nav />
