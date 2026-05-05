@@ -3,6 +3,7 @@ import Nav from '../components/Nav';
 
 import { useState, useRef, useEffect } from 'react';
 import '../styles/waitlist.css';
+import { Helmet } from 'react-helmet-async'
 import loader from '../assets/icons/loader.gif'
 import Marquee from "react-fast-marquee";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
