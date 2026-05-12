@@ -1,3 +1,4 @@
+import Lyrics from './pages/Lyrics';
 import Giveaways from './pages/Giveaways';
 import Waitlist from './pages/Waitlist';
 import GiveawayDetail from './pages/GiveawayDetail';
@@ -9,6 +10,7 @@ export const router = createBrowserRouter(
             <Route path="/" element={<Waitlist />} />
             <Route path="/waitlist" element={<Waitlist />} />
             <Route path="/giveaways" element={<Giveaways />} />
+            <Route path="/lyric-cards" element={<Lyrics />} />
             <Route path="/giveaways/:slug" element={<GiveawayDetail />} />
         </>
     )

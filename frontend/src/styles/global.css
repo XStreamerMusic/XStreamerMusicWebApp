@@ -12,6 +12,13 @@ body {
     background-size: 28px 28px;
 }
 
+.site-input {
+    border: none;
+    color: #fff;
+    outline: none;
+    background-color: #ffffff25;
+}
+
 .site-heading {
     font-family: 'Karantina';
 }
@@ -20,6 +27,11 @@ body {
     cursor: pointer;
     height: fit-content;
     text-decoration: none;
+}
+
+.site-btn {
+    border: none;
+    border-radius: .25rem;
 }
 
 .messages {

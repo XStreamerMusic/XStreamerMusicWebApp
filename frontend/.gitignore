@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+Lyrics.jsx
+lyrics.css
+lyricsToolbar.jsx
