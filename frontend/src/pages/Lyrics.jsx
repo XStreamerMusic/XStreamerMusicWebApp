@@ -178,8 +178,45 @@ function Lyrics () {
     return (
         <>
             <Helmet>
-                <title>Lyric Cards - XStreamer Music</title>
-                <meta name="description" content="Build your own lyric cards for instagram, twitter and many more" />
+                <title>Free Lyric Card Maker | XStreamer Music</title>
+
+                <meta
+                    name="description"
+                    content="Create stunning lyric cards for X, Instagram, Facebook and more. Upload your own image, add lyrics, customize your design and export for free with XStreamer Music."
+                />
+
+                <link
+                    rel="canonical"
+                    href="https://www.xstreamermusic.xyz/lyric-cards"
+                />
+
+                <meta property="og:title" content="Free Lyric Card Maker | XStreamer Music" />
+                <meta property="og:description" content="Create stunning lyric cards for X, Instagram and Facebook for free." />
+
+                <meta name="twitter:title" content="Free Lyric Card Maker | XStreamer Music" />
+                <meta name="twitter:description" content="Create stunning lyric cards for X, Instagram and Facebook for free." />
+
+                <meta property="og:url" content="https://www.xstreamermusic.xyz/lyric-cards" />
+                <meta property="og:type" content="website" />
+
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebApplication",
+                        "@id": "https://www.xstreamermusic.xyz/lyric-cards/#webapp",
+                        name: "XStreamer Music Lyric Card Maker",
+                        applicationCategory: "MultimediaApplication",
+                        operatingSystem: "Any",
+                        url: "https://www.xstreamermusic.xyz/lyric-cards",
+                        description: "Create stunning lyric cards for X, Instagram, Facebook and more. Upload your own image, add lyrics, customize your design and export high-quality lyric cards for free.",
+                        isPartOf: {
+                            "@id": "https://www.xstreamermusic.xyz/#website"
+                        },
+                        publisher: {
+                            "@id": "https://www.xstreamermusic.xyz/#organization"
+                        }
+                    })}
+                </script>
             </Helmet>
             <Nav />
             <main ref={mainContainer} className='lyrics'>

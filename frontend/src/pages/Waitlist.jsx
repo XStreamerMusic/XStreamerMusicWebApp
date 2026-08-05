@@ -60,8 +60,65 @@ function Waitlist () {
     return (
         <>
             <Helmet>
-                <title>Join The New Wave - XStreamer Music</title>
-                <meta name="description" content="South African music is booming, and the beat is about to DROP. Join our waitlist, and we'll notify you when the site is up and running" />
+                <title>XStreamer Music | South African Music Discovery</title>
+
+                <meta
+                    name="description"
+                    content="Discover South African music news, artist stories, free monthly music giveaways, and create beautiful lyric cards with XStreamer Music."
+                />
+
+                <link
+                    rel="canonical"
+                    href="https://www.xstreamermusic.xyz/"
+                />
+
+                <meta property="og:url" content="https://www.xstreamermusic.xyz" />
+
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "@id": "https://www.xstreamermusic.xyz/#organization",
+                        name: "XStreamer Music",
+                        url: "https://www.xstreamermusic.xyz",
+                        logo: "https://www.xstreamermusic.xyz/brand/logo.png",
+                        description: "XStreamer Music is a South African music discovery platform combining music journalism, artist promotion, free monthly giveaways and creative tools.",
+                        sameAs: [
+                            "https://x.com/XStreamerMusic",
+                            "https://facebook.com/XStreamerMusic"
+                        ]
+                    })}
+                </script>
+
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        "@id": "https://www.xstreamermusic.xyz/#website",
+                        "url": "https://www.xstreamermusic.xyz",
+                        "name": "XStreamer Music",
+                        "publisher": {
+                            "@id": "https://www.xstreamermusic.xyz/#organization"
+                        }
+                    })}
+                </script>
+
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "SiteNavigationElement",
+                        "name": [
+                            "Home",
+                            "Giveaways",
+                            "Lyric Cards"
+                        ],
+                        "url": [
+                            "https://www.xstreamermusic.xyz/",
+                            "https://www.xstreamermusic.xyz/giveaways",
+                            "https://www.xstreamermusic.xyz/lyric-cards"
+                        ]
+                    })}
+                </script>
             </Helmet>
             <Nav />
             <main ref={mainContainer} className='waitlist'>
@@ -72,8 +129,10 @@ function Waitlist () {
 
                 <p className='site-p'>
                     <span>
-                        SA Music is experiencing a cultural BOOM,<br />and
-                        you DON'T wanna miss out!
+                        SA Music is experiencing a cultural BOOM,
+                        and the conversation is only getting louder.<br />
+                        XStreamer Music is where discovery, music journalism
+                        and community come together.
                         <br /><br />
                     </span>
 

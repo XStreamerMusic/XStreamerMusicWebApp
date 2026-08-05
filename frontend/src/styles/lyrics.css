@@ -131,10 +131,9 @@ main.lyrics header .site-heading{
 
 .title-bar .details {
     flex: 1;
-    gap: 1cqh;
+    gap: 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .title-bar .card-watermark {
@@ -165,8 +164,9 @@ main.lyrics header .site-heading{
 
 .title-bar #song-title {
     color: #ffffff;
-    font-size: 20cqh;
+    font-size: 15cqh;
     font-family: 'Jost';
+    line-height: .8rem  ;
 }
 
 #card-builder {

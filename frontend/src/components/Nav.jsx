@@ -76,6 +76,9 @@ function Nav () {
                     <NavLink className='site-link' to='/giveaways'>
                         Giveaways
                     </NavLink>
+                    <NavLink className='site-link' to='/lyric-cards'>
+                        Lyric Cards
+                    </NavLink>
                 </ul>
             </div>
         </nav>

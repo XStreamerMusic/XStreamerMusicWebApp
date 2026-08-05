@@ -22,8 +22,43 @@ function Giveaways () {
     return (
         <>
             <Helmet>
-                <title>Giveaways - XStreamer Music</title>
-                <meta name="description" content="We've got so much love to give, so we're giving it away for FREE, every month to the most loyal fans. Win free Giveaway prizes every month on XStreamer Music" />
+                <title>Free Monthly Music Giveaways | XStreamer Music</title>
+
+                <meta
+                    name="description"
+                    content="Win Spotify, Apple Music and YouTube Music gift cards every month. Enter free music giveaways, discover new artists and never miss your chance to win with XStreamer Music."
+                />
+
+                <link
+                    rel="canonical"
+                    href="https://www.xstreamermusic.xyz/giveaways"
+                />
+
+                <meta property="og:url" content="https://www.xstreamermusic.xyz/giveaways" />
+
+                <meta property="og:title" content="Free Monthly Music Giveaways | XStreamer Music" />
+                <meta property="og:description" content="Win Spotify, Apple Music and YouTube Music gift cards every month. Enter free music giveaways, discover new artists and never miss your chance to win with XStreamer Music." />
+                <meta property="og:type" content="website" />
+
+                <meta name="twitter:title" content="Free Monthly Music Giveaways | XStreamer Music" />
+                <meta name="twitter:description" content="Win Spotify, Apple Music and YouTube Music gift cards every month. Enter free music giveaways, discover new artists and never miss your chance to win with XStreamer Music." />
+
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "CollectionPage",
+                        "@id": "https://www.xstreamermusic.xyz/giveaways/#webpage",
+                        url: "https://www.xstreamermusic.xyz/giveaways",
+                        name: "Free Monthly Music Giveaways | XStreamer Music",
+                        description: "Win Spotify, Apple Music and YouTube Music gift cards every month. Enter free music giveaways and never miss your chance to win with XStreamer Music.",
+                        isPartOf: {
+                            "@id": "https://www.xstreamermusic.xyz/#website"
+                        },
+                        about: {
+                            "@id": "https://www.xstreamermusic.xyz/#organization"
+                        }
+                    })}
+                </script>
             </Helmet>
             <main ref={mainContainer} className='giveaways'>
                 <header>

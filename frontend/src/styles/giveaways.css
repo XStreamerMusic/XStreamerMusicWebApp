@@ -166,8 +166,18 @@ main.giveaways {
 }
 
 @media screen and (min-width: 1600px) {
+
+    main.giveaways {
+        gap: 10rem;
+    }
+
     .prize-card .prize-img {
         max-height: 16rem;
+    }
+
+    main.giveaways .prize-grid {
+        gap: 1rem;
+        padding: 0 10rem;
     }
 
 }
