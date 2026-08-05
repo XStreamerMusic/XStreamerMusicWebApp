@@ -164,11 +164,19 @@ main.lyrics header .site-heading{
     -webkit-text-fill-color: transparent;
 }
 
+.lyric-card.instagramPost #artist-title {
+    font-size: 30cqh;
+}
+
 .title-bar #song-title {
     color: #ffffff;
     font-size: 20cqh;
     /* font-family: 'Jost'; */
     line-height: 1.7rem;
+}
+
+.lyric-card.instagramPost #song-title {
+    font-size: 15cqh;
 }
 
 #card-builder {
