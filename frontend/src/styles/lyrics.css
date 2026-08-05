@@ -131,8 +131,9 @@ main.lyrics header .site-heading{
 
 .title-bar .details {
     flex: 1;
-    gap: 1rem;
+    gap: .5rem;
     display: flex;
+    padding: 1rem 0;
     align-items: center;
 }
 
@@ -148,11 +149,12 @@ main.lyrics header .site-heading{
 }
 
 .title-bar #artist-title {
-    font-size: 30cqh;
+    font-size: 35cqh;
     width: fit-content;
     /* margin-bottom: .25rem; */
     font-family: 'Karantina';
     background: #8C52FF;
+    text-transform: uppercase;
     background: -webkit-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     background: -moz-linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     background: linear-gradient(145deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
@@ -164,9 +166,9 @@ main.lyrics header .site-heading{
 
 .title-bar #song-title {
     color: #ffffff;
-    font-size: 15cqh;
-    font-family: 'Jost';
-    line-height: .8rem  ;
+    font-size: 20cqh;
+    /* font-family: 'Jost'; */
+    line-height: 1.7rem;
 }
 
 #card-builder {
