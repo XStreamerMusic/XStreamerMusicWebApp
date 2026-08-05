@@ -60,7 +60,7 @@ function Waitlist () {
     return (
         <>
             <Helmet>
-                <title>XStreamer Music | South African Music Discovery</title>
+                <title>XStreamer Music | South African Music News</title>
 
                 <meta
                     name="description"
