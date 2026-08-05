@@ -64,7 +64,7 @@ function Waitlist () {
 
                 <meta
                     name="description"
-                    content="Discover South African music news, artist stories, free monthly music giveaways, and create beautiful lyric cards with XStreamer Music."
+                    content="South African music culture, all in one place. Discover artists, their news, music, and streaming milestones. Enter free monthly giveaways and create beautiful lyric cards with XStreamer Music."
                 />
 
                 <link
