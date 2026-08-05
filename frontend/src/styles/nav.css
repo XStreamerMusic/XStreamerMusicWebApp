@@ -47,11 +47,8 @@ nav {
     height: 100dvh;
     position: fixed;
     z-index: 99;
-    background: #8C52FF;
+    background: #242424;
     transform: translateX(100%);
-    background: -webkit-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    background: -moz-linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
-    background: linear-gradient(90deg, rgba(140, 82, 255, 1) 0%, rgba(255, 137, 52, 1) 100%);
     
     transition: .3s ease transform;
 }
