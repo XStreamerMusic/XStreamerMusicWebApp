@@ -5,6 +5,9 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoIosCloseCircle } from "react-icons/io";
 import { NavLink, Link} from 'react-router-dom'
 
+import { BsTwitterX } from "react-icons/bs";
+import { FaFacebookF, FaTiktok } from "react-icons/fa";
+
 function Nav () {
 
     const mobileNav = useRef()
@@ -29,7 +32,6 @@ function Nav () {
                         alt="XStreamer Music official logo - white against transparent background"
                     />
                 </NavLink>
-
                 <ul className='nav-list'>
                     <NavLink className='site-link' to='/'>
                         Join Our Waitlist
@@ -40,6 +42,23 @@ function Nav () {
                     <NavLink className='site-link' to='/lyric-cards'>
                         Lyric Cards
                     </NavLink>
+                </ul>
+                <ul className="social-links">
+                    <li>
+                        <a href="https://x.com/xstreamermusic" className="social-link">
+                            <BsTwitterX />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/xstreamermusic" className="social-link">
+                            <FaFacebookF />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tiktok.com/@xstreamermusic" className="social-link">
+                            <FaTiktok />
+                        </a>
+                    </li>
                 </ul>
 
                 {/* responsive */}

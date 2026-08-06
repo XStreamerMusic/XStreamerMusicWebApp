@@ -88,7 +88,8 @@ function Waitlist () {
                         description: "XStreamer Music is a South African music discovery platform combining music journalism, artist promotion, free monthly giveaways and creative tools.",
                         sameAs: [
                             "https://x.com/XStreamerMusic",
-                            "https://facebook.com/XStreamerMusic"
+                            "https://facebook.com/XStreamerMusic",
+                            "https://www.tiktok.com/@xstreamermusic"
                         ]
                     })}
                 </script>
@@ -111,7 +112,7 @@ function Waitlist () {
                         "@context": "https://schema.org",
                         "@type": "SiteNavigationElement",
                         "name": [
-                            "Home",
+                            "Join Our Waitlist",
                             "Giveaways",
                             "Lyric Cards"
                         ],
