@@ -60,19 +60,22 @@ function Waitlist () {
     return (
         <>
             <Helmet>
-                <title>XStreamer Music | South African Music News</title>
+                <title>XStreamer Music - South African Music News, Giveaways & Lyric Cards</title>
 
-                <meta
-                    name="description"
-                    content="South African music culture, all in one place. Discover artists, their news, music, and streaming milestones. Enter free monthly giveaways and create beautiful lyric cards with XStreamer Music."
-                />
+                <meta name="description" content="South African music culture, all in one place. Discover artists, their news, music, and streaming milestones. Enter free monthly giveaways and create beautiful lyric cards with XStreamer Music."/>
 
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.xstreamermusic.xyz" />
+                <meta property="og:title" content="XStreamer Music · South African Music, Artists, & News" />
+                <meta property="og:description" content="South African music culture, all in one place. Discover artists, their news, music, and streaming milestones. Enter free monthly giveaways and create beautiful lyric cards with XStreamer Music." />
+                
+                <meta name="twitter:title" content="XStreamer Music · South African Music, Artists, & News" />
+                <meta name="twitter:description" content="South African music culture, all in one place. Discover artists, their news, music, and streaming milestones. Enter free monthly giveaways and create beautiful lyric cards with XStreamer Music." />
+                
                 <link
                     rel="canonical"
                     href="https://www.xstreamermusic.xyz/"
                 />
-
-                <meta property="og:url" content="https://www.xstreamermusic.xyz" />
 
                 <script type="application/ld+json">
                     {JSON.stringify({
