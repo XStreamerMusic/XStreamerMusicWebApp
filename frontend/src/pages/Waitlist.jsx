@@ -127,7 +127,7 @@ function Waitlist () {
             <main ref={mainContainer} className='waitlist'>
                 <h1 className='site-heading'>
                     XStreamer Music<br />
-                    <span>South African Music Culture, Discovered.</span>
+                    <span>South African Music Culture</span>
                 </h1>
 
                 <p className='site-p'>
