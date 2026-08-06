@@ -8,7 +8,6 @@ export const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<Waitlist />} />
-            <Route path="/waitlist" element={<Navigate to="/" replace />} />
             <Route path="/giveaways" element={<Giveaways />} />
             <Route path="/lyric-cards" element={<Lyrics />} />
             <Route path="/giveaways/:slug" element={<GiveawayDetail />} />

@@ -123,22 +123,20 @@ function Waitlist () {
             <Nav />
             <main ref={mainContainer} className='waitlist'>
                 <h1 className='site-heading'>
-                    The Drop Is Here<br />
-                    <span>Join The New Wave</span>
+                    XStreamer Music<br />
+                    <span>South African Music Culture, Discovered.</span>
                 </h1>
 
                 <p className='site-p'>
                     <span>
-                        SA Music is experiencing a cultural BOOM,
-                        and the conversation is only getting louder.<br />
-                        XStreamer Music is where discovery, music journalism
-                        and community come together.
+                        XStreamer Music is where South African music discovery,
+                        journalism and community come together<br />artist news,
+                        streaming milestones, giveaways and more, all in one place.
                         <br /><br />
                     </span>
 
-                    <b>Join The Waitlist,</b><br />
-                    and we'll give you a
-                    shout when the site is up and running!
+                    <b>We're putting the finishing touches on the full experience.</b><br />
+                    Join the waitlist and we'll give you a shout the moment it's live.
                 </p>
 
                 <form id="waitlist" onSubmit={joinWaitlist}>

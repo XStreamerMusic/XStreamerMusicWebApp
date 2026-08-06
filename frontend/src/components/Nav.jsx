@@ -31,7 +31,7 @@ function Nav () {
                 </NavLink>
 
                 <ul className='nav-list'>
-                    <NavLink className='site-link' to='/waitlist'>
+                    <NavLink className='site-link' to='/'>
                         Join Our Waitlist
                     </NavLink>
                     <NavLink className='site-link' to='/giveaways'>
@@ -70,7 +70,7 @@ function Nav () {
                     </button>
                 </div>
                 <ul className="nav-list mobile">
-                    <NavLink className='site-link' to='/waitlist'>
+                    <NavLink className='site-link' to='/'>
                         Join Our Waitlist
                     </NavLink>
                     <NavLink className='site-link' to='/giveaways'>
