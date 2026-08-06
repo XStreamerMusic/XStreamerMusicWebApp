@@ -45,17 +45,17 @@ function Nav () {
                 </ul>
                 <ul className="social-links">
                     <li>
-                        <a href="https://x.com/xstreamermusic" className="social-link">
+                        <a href="https://x.com/xstreamermusic" className="social-link" target='blank'>
                             <BsTwitterX />
                         </a>
                     </li>
                     <li>
-                        <a href="https://facebook.com/xstreamermusic" className="social-link">
+                        <a href="https://facebook.com/xstreamermusic" className="social-link" target='blank'>
                             <FaFacebookF />
                         </a>
                     </li>
                     <li>
-                        <a href="https://tiktok.com/@xstreamermusic" className="social-link">
+                        <a href="https://tiktok.com/@xstreamermusic" className="social-link" target='blank'>
                             <FaTiktok />
                         </a>
                     </li>
