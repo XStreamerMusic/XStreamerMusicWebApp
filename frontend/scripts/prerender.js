@@ -1,5 +1,6 @@
 // scripts/prerender.js
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -72,8 +73,9 @@ async function main() {
     const server = await startServer();
 
     const browser = await puppeteer.launch({
-        headless: true,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        args: chromium.args,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
     });
 
     const results = {};
